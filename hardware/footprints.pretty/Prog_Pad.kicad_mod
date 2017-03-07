@@ -1,4 +1,4 @@
-(module debug (layer F.Cu) (tedit 58BE4429)
+(module Prog_Pad (layer F.Cu) (tedit 58BE4429)
   (fp_text reference D** (at 0.63 -1.5) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
