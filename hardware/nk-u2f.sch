@@ -35,8 +35,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Nitrokey FIDO U2F"
-Date "2017-03-07"
-Rev "R1"
+Date "2017-06-13"
+Rev "R2"
 Comp "MikroStarTech"
 Comment1 "Muhammad Atif Riaz"
 Comment2 ""
@@ -88,10 +88,10 @@ HD-
 Text Label 2350 4050 2    60   ~ 0
 HD+
 $Comp
-L R R5
+L R R3
 U 1 1 56857B9B
 P 10300 3950
-F 0 "R5" V 10380 3950 50  0000 C CNN
+F 0 "R3" V 10380 3950 50  0000 C CNN
 F 1 "100" V 10300 3950 50  0000 C CNN
 F 2 "Resistors_SMD:R_0402" V 10230 3950 50  0001 C CNN
 F 3 "?" H 10300 3950 50  0001 C CNN
@@ -240,39 +240,6 @@ $EndComp
 Text Label 9650 1800 3    60   ~ 0
 GND
 $Comp
-L u2f-fiducial F1
-U 1 1 571C39BB
-P 1300 6600
-F 0 "F1" H 1150 6800 60  0000 C CNN
-F 1 "u2f-fiducial" H 1650 6800 60  0000 C CNN
-F 2 "footprints:u2f-fiducial" H 1300 6600 60  0001 C CNN
-F 3 "" H 1300 6600 60  0000 C CNN
-	1    1300 6600
-	1    0    0    -1  
-$EndComp
-$Comp
-L u2f-fiducial F2
-U 1 1 571C3A1E
-P 1800 6750
-F 0 "F2" H 1650 6950 60  0000 C CNN
-F 1 "u2f-fiducial" H 2150 6950 60  0000 C CNN
-F 2 "footprints:u2f-fiducial" H 1800 6750 60  0001 C CNN
-F 3 "" H 1800 6750 60  0000 C CNN
-	1    1800 6750
-	1    0    0    -1  
-$EndComp
-$Comp
-L u2f-fiducial F3
-U 1 1 571C3A85
-P 2200 6900
-F 0 "F3" H 2050 7100 60  0000 C CNN
-F 1 "u2f-fiducial" H 2550 7100 60  0000 C CNN
-F 2 "footprints:u2f-fiducial" H 2200 6900 60  0001 C CNN
-F 3 "" H 2200 6900 60  0000 C CNN
-	1    2200 6900
-	1    0    0    -1  
-$EndComp
-$Comp
 L MTCH101 U2
 U 1 1 58B45395
 P 6100 1700
@@ -295,10 +262,10 @@ F 3 "" H 4700 1600 60  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L R R2
+L R R1
 U 1 1 58B46D59
 P 5350 1600
-F 0 "R2" V 5430 1600 50  0000 C CNN
+F 0 "R1" V 5430 1600 50  0000 C CNN
 F 1 "4K7" V 5350 1600 50  0000 C CNN
 F 2 "Resistors_SMD:R_0402" V 5280 1600 50  0001 C CNN
 F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 5350 1600 50  0001 C CNN
@@ -322,10 +289,10 @@ Button
 Text Label 6850 1800 0    60   ~ 0
 Button
 $Comp
-L R R3
+L R R2
 U 1 1 58B4B268
 P 5350 1800
-F 0 "R3" V 5430 1800 50  0000 C CNN
+F 0 "R2" V 5430 1800 50  0000 C CNN
 F 1 "10K" V 5350 1800 50  0000 C CNN
 F 2 "Resistors_SMD:R_0402" V 5280 1800 50  0001 C CNN
 F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 5350 1800 50  0001 C CNN
@@ -339,53 +306,12 @@ $EndComp
 Wire Wire Line
 	6750 1700 6600 1700
 Wire Wire Line
-	6750 1050 6750 2150
+	6750 1050 6750 1700
 Wire Wire Line
 	5500 1800 5650 1800
-$Comp
-L R R1
-U 1 1 58B4C1B5
-P 4850 2150
-F 0 "R1" V 4930 2150 50  0000 C CNN
-F 1 "100K" V 4850 2150 50  0000 C CNN
-F 2 "Resistors_SMD:R_0402" V 4780 2150 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 4850 2150 50  0001 C CNN
-F 4 "Vishay Dale" H 4850 2150 60  0001 C CNN "MFG Name"
-F 5 "?" H 4850 2150 60  0001 C CNN "MFG Part Num"
-F 6 "?" H 4850 2150 60  0001 C CNN "Distributer PN"
-F 7 "?" H 4850 2150 60  0001 C CNN "Distributer Link"
-	1    4850 2150
-	0    1    1    0   
-$EndComp
-$Comp
-L R R4
-U 1 1 58B4C27F
-P 5350 2150
-F 0 "R4" V 5430 2150 50  0000 C CNN
-F 1 "100K" V 5350 2150 50  0000 C CNN
-F 2 "Resistors_SMD:R_0402" V 5280 2150 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 5350 2150 50  0001 C CNN
-F 4 "Vishay Dale" H 5350 2150 60  0001 C CNN "MFG Name"
-F 5 "?" H 5350 2150 60  0001 C CNN "MFG Part Num"
-F 6 "?" H 5350 2150 60  0001 C CNN "Distributer PN"
-F 7 "?" H 5350 2150 60  0001 C CNN "Distributer Link"
-	1    5350 2150
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	6750 2150 5500 2150
 Connection ~ 6750 1700
 Wire Wire Line
-	5000 2150 5200 2150
-Wire Wire Line
 	5200 1800 5100 1800
-Wire Wire Line
-	5100 1800 5100 2150
-Connection ~ 5100 2150
-Wire Wire Line
-	4700 2150 4500 2150
-Text Label 4500 2150 0    60   ~ 0
-GND
 Text Label 6750 1050 0    60   ~ 0
 +5V
 $Comp
@@ -529,8 +455,8 @@ Text Notes 9250 1150 0    60   ~ 0
 Programming Pins\n\n
 Text Notes 5500 1400 0    60   ~ 0
 Capacitive Touch Buton\n\n\n
-Text Notes 4550 3150 0    60   ~ 0
-MTSA Pin, Sensitivity control ; voltage on MTSA pin control Sensitivity\n+5V  Maximum\nGND Minimum\nV(MTSA) =(R1/(R1+R4))*5V\nR1=100K; R4=100k\nV(MTSA)=2.5V\n\n\n\n
+Text Notes 4950 2000 0    60   ~ 0
+Maximum Sensitivity\n
 $Comp
 L LED_Small D1
 U 1 1 58BE480C
@@ -632,4 +558,6 @@ F 3 "" H 10450 3500 60  0000 C CNN
 $EndComp
 Text Label 10650 3350 3    60   ~ 0
 GND
+Wire Wire Line
+	5100 1800 5100 1700
 $EndSCHEMATC
