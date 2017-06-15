@@ -1,0 +1,16 @@
+### Module positions - created on Do 15 Jun 2017 09:03:21 CEST ###
+### Printed by Pcbnew version kicad 4.0.2+dfsg1-stable
+## Unit = mm, Angle = deg.
+## Side : bottom
+# Ref     Val        Package                          PosX       PosY       Rot  Side
+C1        0.1uF      C_0402                        -2.9750     5.8465   90.0000  bottom
+C2        0.1uF      C_0402                        -5.4750    -7.0535  180.0000  bottom
+C3        4.7uF      C_0402                         3.1250    -4.9535  270.0000  bottom
+D1        LED_Small  LED_0402                     -11.3750    -0.0535  270.0000  bottom
+R1        4K7        R_0402                        -5.4750    -5.5535    0.0000  bottom
+R2        10K        R_0402                         0.4750    -5.7035   90.0000  bottom
+R3        100        R_0402                       -11.4250    -2.0535  270.0000  bottom
+U2        MTCH101    SOT-23-6                      -2.0750    -5.8535  270.0000  bottom
+U3        DF5A5.6JE  SOT-553                        2.1250     5.4465  270.0000  bottom
+U4        ATECC508A  DFN-8-1EP_3x3mm_Pitch0.5mm    -0.6750     5.3465  270.0000  bottom
+## End
