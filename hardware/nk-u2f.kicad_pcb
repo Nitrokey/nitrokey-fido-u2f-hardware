@@ -17,8 +17,7 @@
     (title "Nitrokey FIDO U2F")
     (date 2017-03-07)
     (rev R1)
-    (company MikroStarTech)
-    (comment 1 "Muhammad Atif Riaz")
+    (company Nitrokey)
   )
 
   (layers
