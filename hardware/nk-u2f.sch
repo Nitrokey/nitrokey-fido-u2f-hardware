@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:nk-u2f-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -35,8 +36,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Nitrokey FIDO U2F"
-Date "2017-06-13"
-Rev "R2"
+Date "2018-01-29"
+Rev "R3"
 Comp "Nitrokey"
 Comment1 ""
 Comment2 ""
@@ -109,21 +110,10 @@ Host USB data
 Text Notes 1700 1000 0    60   ~ 0
 Secure element for EC
 $Comp
-L GND #PWR01
-U 1 1 5686E5B0
-P 9250 5800
-F 0 "#PWR01" H 9250 5550 50  0001 C CNN
-F 1 "GND" H 9250 5650 50  0000 C CNN
-F 2 "" H 9250 5800 50  0000 C CNN
-F 3 "" H 9250 5800 50  0000 C CNN
-	1    9250 5800
-	1    0    0    -1  
-$EndComp
-$Comp
-L PWR_FLAG #FLG02
+L PWR_FLAG-RESCUE-nk-u2f #FLG2
 U 1 1 5686E60B
 P 9650 5800
-F 0 "#FLG02" H 9650 5895 50  0001 C CNN
+F 0 "#FLG2" H 9650 5895 50  0001 C CNN
 F 1 "PWR_FLAG" H 9650 5980 50  0000 C CNN
 F 2 "" H 9650 5800 50  0000 C CNN
 F 3 "" H 9650 5800 50  0000 C CNN
@@ -135,57 +125,57 @@ Text Label 9650 5600 0    60   ~ 0
 Text Label 9250 5600 0    60   ~ 0
 GND
 NoConn ~ 2000 3300
-Text Label 9550 2350 1    60   ~ 0
+Text Label 10050 1750 2    60   ~ 0
 C2CK
-Text Label 9450 2350 1    60   ~ 0
+Text Label 10050 1850 2    60   ~ 0
 C2D
 $Comp
-L debug-pin TX1
+L debug-pin TP9
 U 1 1 56A3F7EB
-P 10150 3500
-F 0 "TX1" V 9950 2950 60  0000 C CNN
-F 1 "debug-pin" H 10250 3250 60  0001 C CNN
-F 2 "footprints:Prog_Pad" H 10150 3500 60  0001 C CNN
-F 3 "" H 10150 3500 60  0000 C CNN
-	1    10150 3500
-	-1   0    0    1   
+P 9950 2850
+F 0 "TP9" V 9750 2300 60  0000 C CNN
+F 1 "debug-pin" H 10050 2600 60  0001 C CNN
+F 2 "footprints:Prog_Pad" H 9950 2850 60  0001 C CNN
+F 3 "" H 9950 2850 60  0000 C CNN
+	1    9950 2850
+	0    1    1    0   
 $EndComp
 $Comp
-L debug-pin RX1
+L debug-pin TP8
 U 1 1 56A3F89E
-P 10300 3500
-F 0 "RX1" V 10100 2950 60  0000 C CNN
-F 1 "debug-pin" H 10400 3250 60  0001 C CNN
-F 2 "footprints:Prog_Pad" H 10300 3500 60  0001 C CNN
-F 3 "" H 10300 3500 60  0000 C CNN
-	1    10300 3500
-	-1   0    0    1   
+P 9950 2750
+F 0 "TP8" V 9750 2200 60  0000 C CNN
+F 1 "debug-pin" H 10050 2500 60  0001 C CNN
+F 2 "footprints:Prog_Pad" H 9950 2750 60  0001 C CNN
+F 3 "" H 9950 2750 60  0000 C CNN
+	1    9950 2750
+	0    1    1    0   
 $EndComp
 $Comp
-L debug-pin C2CK1
+L debug-pin TP5
 U 1 1 56A3F8D6
-P 9750 2200
-F 0 "C2CK1" V 9550 1600 60  0000 C CNN
-F 1 "debug-pin" H 9850 1950 60  0001 C CNN
-F 2 "footprints:Prog_Pad" H 9750 2200 60  0001 C CNN
-F 3 "" H 9750 2200 60  0000 C CNN
-	1    9750 2200
-	1    0    0    -1  
+P 9900 1550
+F 0 "TP5" V 9700 950 60  0000 C CNN
+F 1 "debug-pin" H 10000 1300 60  0001 C CNN
+F 2 "footprints:Prog_Pad" H 9900 1550 60  0001 C CNN
+F 3 "" H 9900 1550 60  0000 C CNN
+	1    9900 1550
+	0    -1   -1   0   
 $EndComp
 $Comp
-L debug-pin C2D1
+L debug-pin TP6
 U 1 1 56A3F90D
-P 9650 2200
-F 0 "C2D1" V 9450 1600 60  0000 C CNN
-F 1 "debug-pin" H 9750 1950 60  0001 C CNN
-F 2 "footprints:Prog_Pad" H 9600 2350 60  0001 C CNN
-F 3 "" H 9650 2200 60  0000 C CNN
-	1    9650 2200
-	1    0    0    -1  
+P 9900 1650
+F 0 "TP6" V 9700 1050 60  0000 C CNN
+F 1 "debug-pin" H 10000 1400 60  0001 C CNN
+F 2 "footprints:Prog_Pad" H 9850 1800 60  0001 C CNN
+F 3 "" H 9900 1650 60  0000 C CNN
+	1    9900 1650
+	0    -1   -1   0   
 $EndComp
-Text Label 10350 3350 3    60   ~ 0
+Text Label 9800 2650 0    60   ~ 0
 TX
-Text Label 10500 3350 3    60   ~ 0
+Text Label 9800 2550 0    60   ~ 0
 RX
 NoConn ~ 1500 1400
 Text Label 3050 1200 0    60   ~ 0
@@ -194,7 +184,7 @@ NoConn ~ 2700 1500
 NoConn ~ 2700 1400
 NoConn ~ 2700 1300
 Wire Wire Line
-	4650 6500 4650 7350
+	4650 6200 4650 7350
 Wire Wire Line
 	4650 7150 4950 7150
 Wire Wire Line
@@ -203,7 +193,7 @@ Connection ~ 4650 7150
 Wire Wire Line
 	5500 7150 5250 7150
 Wire Wire Line
-	5500 6500 5500 7150
+	5500 6200 5500 7150
 Connection ~ 5500 6800
 Connection ~ 4650 6800
 Wire Wire Line
@@ -227,17 +217,17 @@ Wire Wire Line
 Text Label 5900 5700 3    60   ~ 0
 +5V
 $Comp
-L debug-pin GND1
+L debug-pin TP1
 U 1 1 570602D3
-P 9450 1950
-F 0 "GND1" V 9250 1350 60  0000 C CNN
-F 1 "debug-pin" H 9550 1700 60  0001 C CNN
-F 2 "footprints:Prog_Pad" H 9150 2050 60  0001 C CNN
-F 3 "" H 9450 1950 60  0000 C CNN
-	1    9450 1950
-	-1   0    0    1   
+P 9350 1850
+F 0 "TP1" V 9150 1250 60  0000 C CNN
+F 1 "debug-pin" H 9450 1600 60  0001 C CNN
+F 2 "footprints:Prog_Pad" H 9050 1950 60  0001 C CNN
+F 3 "" H 9350 1850 60  0000 C CNN
+	1    9350 1850
+	0    1    1    0   
 $EndComp
-Text Label 9650 1800 3    60   ~ 0
+Text Label 9200 1650 0    60   ~ 0
 GND
 $Comp
 L MTCH101 U2
@@ -286,7 +276,7 @@ Text Label 5100 1700 0    60   ~ 0
 GND
 Text Label 4700 4200 2    60   ~ 0
 Button
-Text Label 6850 1800 0    60   ~ 0
+Text Label 7400 1800 0    60   ~ 0
 Button
 $Comp
 L R R2
@@ -306,10 +296,7 @@ $EndComp
 Wire Wire Line
 	6750 1700 6600 1700
 Wire Wire Line
-	6750 1050 6750 1700
-Wire Wire Line
 	5500 1800 5650 1800
-Connection ~ 6750 1700
 Wire Wire Line
 	5200 1800 5100 1800
 Text Label 6750 1050 0    60   ~ 0
@@ -345,10 +332,9 @@ F 3 "" H 5800 4450 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6600 1600 6750 1600
-Connection ~ 6750 1600
+	6600 1600 7400 1600
 Wire Wire Line
-	6600 1800 6850 1800
+	6600 1800 7400 1800
 Wire Wire Line
 	1500 1200 950  1200
 Wire Wire Line
@@ -445,13 +431,13 @@ Wire Wire Line
 NoConn ~ 5250 4300
 NoConn ~ 5800 3600
 NoConn ~ 5900 3600
-Text Notes 6350 5150 0    60   ~ 0
+Text Notes 4750 5100 0    60   ~ 0
 Host MCU Controller\n
 Text Notes 9700 4200 0    60   ~ 0
  LED\n
-Text Notes 4700 6450 0    60   ~ 0
+Text Notes 4700 6050 0    60   ~ 0
 Decoupling capacitors\n\n
-Text Notes 9250 1150 0    60   ~ 0
+Text Notes 9950 1550 2    60   ~ 0
 Programming Pins\n\n
 Text Notes 5500 1400 0    60   ~ 0
 Capacitive Touch Buton\n\n\n
@@ -470,7 +456,6 @@ F 3 "" V 9800 3950 50  0000 C CNN
 $EndComp
 Wire Wire Line
 	9700 3950 9300 3950
-NoConn ~ 6700 4200
 NoConn ~ 6700 4300
 Wire Wire Line
 	5250 3900 4700 3900
@@ -507,57 +492,211 @@ F 7 "?" H 5100 7150 60  0001 C CNN "Distributer Link"
 	0    -1   1    0   
 $EndComp
 $Comp
-L debug-pin D-1
+L debug-pin TP3
 U 1 1 58BF08D2
-P 9250 1950
-F 0 "D-1" V 9050 1350 60  0000 C CNN
-F 1 "debug-pin" H 9350 1700 60  0001 C CNN
-F 2 "footprints:Prog_Pad" H 9250 1950 60  0001 C CNN
-F 3 "" H 9250 1950 60  0000 C CNN
-	1    9250 1950
-	-1   0    0    1   
+P 9350 2050
+F 0 "TP3" V 9150 1450 60  0000 C CNN
+F 1 "debug-pin" H 9450 1800 60  0001 C CNN
+F 2 "footprints:Prog_Pad" H 9350 2050 60  0001 C CNN
+F 3 "" H 9350 2050 60  0000 C CNN
+	1    9350 2050
+	0    1    1    0   
 $EndComp
 $Comp
-L debug-pin D+1
+L debug-pin TP2
 U 1 1 58BF092E
 P 9350 1950
-F 0 "D+1" V 9150 1350 60  0000 C CNN
+F 0 "TP2" V 9150 1350 60  0000 C CNN
 F 1 "debug-pin" H 9450 1700 60  0001 C CNN
 F 2 "footprints:Prog_Pad" H 9350 1950 60  0001 C CNN
 F 3 "" H 9350 1950 60  0000 C CNN
 	1    9350 1950
-	-1   0    0    1   
+	0    1    1    0   
 $EndComp
-Text Label 9550 1800 3    60   ~ 0
+Text Label 9200 1750 0    60   ~ 0
 HD+
-Text Label 9450 1800 3    60   ~ 0
+Text Label 9200 1850 0    60   ~ 0
 HD-
 $Comp
-L debug-pin +5V1
+L debug-pin TP4
 U 1 1 58BF35A7
-P 9150 1950
-F 0 "+5V1" V 8950 1350 60  0000 C CNN
-F 1 "debug-pin" H 9250 1700 60  0001 C CNN
-F 2 "footprints:Prog_Pad" H 9150 1950 60  0001 C CNN
-F 3 "" H 9150 1950 60  0000 C CNN
-	1    9150 1950
-	-1   0    0    1   
+P 9350 2150
+F 0 "TP4" V 9150 1550 60  0000 C CNN
+F 1 "debug-pin" H 9450 1900 60  0001 C CNN
+F 2 "footprints:Prog_Pad" H 9350 2150 60  0001 C CNN
+F 3 "" H 9350 2150 60  0000 C CNN
+	1    9350 2150
+	0    1    1    0   
 $EndComp
-Text Label 9350 1800 3    60   ~ 0
+Text Label 9200 1950 0    60   ~ 0
 +5V
 $Comp
-L debug-pin GND2
+L debug-pin TP7
 U 1 1 58BF71CE
-P 10450 3500
-F 0 "GND2" V 10250 2900 60  0000 C CNN
-F 1 "debug-pin" H 10550 3250 60  0001 C CNN
-F 2 "footprints:Prog_Pad" H 10150 3600 60  0001 C CNN
-F 3 "" H 10450 3500 60  0000 C CNN
-	1    10450 3500
-	-1   0    0    1   
+P 9950 2650
+F 0 "TP7" V 9750 2100 60  0000 C CNN
+F 1 "debug-pin" H 10050 2400 60  0001 C CNN
+F 2 "footprints:Prog_Pad" H 9650 2750 60  0001 C CNN
+F 3 "" H 9950 2650 60  0000 C CNN
+	1    9950 2650
+	0    1    1    0   
 $EndComp
-Text Label 10650 3350 3    60   ~ 0
+Text Label 9800 2450 0    60   ~ 0
 GND
 Wire Wire Line
 	5100 1800 5100 1700
+$Comp
+L R R6
+U 1 1 5A7781E8
+P 6950 1400
+F 0 "R6" V 7030 1400 50  0000 C CNN
+F 1 "4K7" V 6950 1400 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" V 6880 1400 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 6950 1400 50  0001 C CNN
+F 4 "Vishay Dale" H 6950 1400 60  0001 C CNN "MFG Name"
+F 5 "?" H 6950 1400 60  0001 C CNN "MFG Part Num"
+F 6 "?" H 6950 1400 60  0001 C CNN "Distributer PN"
+F 7 "?" H 6950 1400 60  0001 C CNN "Distributer Link"
+	1    6950 1400
+	1    0    0    -1  
+$EndComp
+Text Label 7400 1600 0    60   ~ 0
+Button_reset
+Wire Wire Line
+	6750 1700 6750 1050
+Wire Wire Line
+	6950 1250 6950 1050
+Text Label 6950 1050 0    60   ~ 0
++5V
+$Comp
+L R R8
+U 1 1 5A778805
+P 7200 1400
+F 0 "R8" V 7280 1400 50  0000 C CNN
+F 1 "4K7" V 7200 1400 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" V 7130 1400 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 7200 1400 50  0001 C CNN
+F 4 "Vishay Dale" H 7200 1400 60  0001 C CNN "MFG Name"
+F 5 "?" H 7200 1400 60  0001 C CNN "MFG Part Num"
+F 6 "?" H 7200 1400 60  0001 C CNN "Distributer PN"
+F 7 "?" H 7200 1400 60  0001 C CNN "Distributer Link"
+	1    7200 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7200 1250 7200 1050
+Text Label 7200 1050 0    60   ~ 0
++5V
+Wire Wire Line
+	7200 1550 7200 1600
+Connection ~ 7200 1600
+Wire Wire Line
+	6950 1550 6950 1800
+Connection ~ 6950 1800
+$Comp
+L R R4
+U 1 1 5A77979E
+P 6450 5400
+F 0 "R4" V 6530 5400 50  0000 C CNN
+F 1 "4K7" V 6450 5400 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" V 6380 5400 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 6450 5400 50  0001 C CNN
+F 4 "Vishay Dale" H 6450 5400 60  0001 C CNN "MFG Name"
+F 5 "?" H 6450 5400 60  0001 C CNN "MFG Part Num"
+F 6 "?" H 6450 5400 60  0001 C CNN "Distributer PN"
+F 7 "?" H 6450 5400 60  0001 C CNN "Distributer Link"
+	1    6450 5400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6450 5550 6450 5600
+Wire Wire Line
+	6450 5600 6100 5600
+Connection ~ 6100 5600
+Wire Wire Line
+	6450 5250 6450 5200
+Text Label 6450 5200 0    60   ~ 0
++5V
+$Comp
+L C C4
+U 1 1 5A779EEC
+P 5100 6200
+F 0 "C4" H 5125 6300 50  0000 L CNN
+F 1 "0.1uF" H 5125 6100 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 5138 6050 50  0001 C CNN
+F 3 "?" H 5100 6200 50  0001 C CNN
+F 4 "?" H 5100 6200 60  0001 C CNN "MFG Name"
+F 5 "?" H 5100 6200 60  0001 C CNN "MFG Part Num"
+F 6 "?" H 5100 6200 60  0001 C CNN "Distributer PN"
+F 7 "?" H 5100 6200 60  0001 C CNN "Distributer Link"
+	1    5100 6200
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	5250 6200 5500 6200
+Connection ~ 5500 6500
+Wire Wire Line
+	4950 6200 4650 6200
+Connection ~ 4650 6500
+$Comp
+L R R5
+U 1 1 5A77A495
+P 6850 3950
+F 0 "R5" V 6930 3950 50  0000 C CNN
+F 1 "4K7" V 6850 3950 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" V 6780 3950 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 6850 3950 50  0001 C CNN
+F 4 "Vishay Dale" H 6850 3950 60  0001 C CNN "MFG Name"
+F 5 "?" H 6850 3950 60  0001 C CNN "MFG Part Num"
+F 6 "?" H 6850 3950 60  0001 C CNN "Distributer PN"
+F 7 "?" H 6850 3950 60  0001 C CNN "Distributer Link"
+	1    6850 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R7
+U 1 1 5A77A548
+P 7050 3950
+F 0 "R7" V 7130 3950 50  0000 C CNN
+F 1 "4K7" V 7050 3950 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" V 6980 3950 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 7050 3950 50  0001 C CNN
+F 4 "Vishay Dale" H 7050 3950 60  0001 C CNN "MFG Name"
+F 5 "?" H 7050 3950 60  0001 C CNN "MFG Part Num"
+F 6 "?" H 7050 3950 60  0001 C CNN "Distributer PN"
+F 7 "?" H 7050 3950 60  0001 C CNN "Distributer Link"
+	1    7050 3950
+	1    0    0    -1  
+$EndComp
+Text Label 7250 4200 0    60   ~ 0
+Button_reset
+Wire Wire Line
+	7250 4200 6700 4200
+Wire Wire Line
+	6850 4100 6850 4400
+Connection ~ 6850 4400
+Wire Wire Line
+	7050 4100 7050 4600
+Connection ~ 7050 4600
+Wire Wire Line
+	7050 3800 7050 3700
+Wire Wire Line
+	6850 3800 6850 3700
+Text Label 7050 3700 0    60   ~ 0
++5V
+Text Label 6850 3700 0    60   ~ 0
++5V
+$Comp
+L PWR_FLAG-RESCUE-nk-u2f #FLG1
+U 1 1 5A77BCD6
+P 9250 5800
+F 0 "#FLG1" H 9250 5895 50  0001 C CNN
+F 1 "PWR_FLAG" H 9250 5980 50  0000 C CNN
+F 2 "" H 9250 5800 50  0000 C CNN
+F 3 "" H 9250 5800 50  0000 C CNN
+	1    9250 5800
+	-1   0    0    1   
+$EndComp
+Text Notes 10050 2400 2    60   ~ 0
+Debugging Pins\n\n
 $EndSCHEMATC
