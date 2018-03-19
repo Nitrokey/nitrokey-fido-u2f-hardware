@@ -110,10 +110,10 @@ Host USB data
 Text Notes 1700 1000 0    60   ~ 0
 Secure element for EC
 $Comp
-L PWR_FLAG-RESCUE-nk-u2f #FLG2
+L PWR_FLAG-RESCUE-nk-u2f #FLG01
 U 1 1 5686E60B
 P 9650 5800
-F 0 "#FLG2" H 9650 5895 50  0001 C CNN
+F 0 "#FLG01" H 9650 5895 50  0001 C CNN
 F 1 "PWR_FLAG" H 9650 5980 50  0000 C CNN
 F 2 "" H 9650 5800 50  0000 C CNN
 F 3 "" H 9650 5800 50  0000 C CNN
@@ -299,8 +299,6 @@ Wire Wire Line
 	5500 1800 5650 1800
 Wire Wire Line
 	5200 1800 5100 1800
-Text Label 6750 1050 0    60   ~ 0
-+5V
 $Comp
 L C C1
 U 1 1 58B4E061
@@ -545,54 +543,10 @@ Text Label 9800 2450 0    60   ~ 0
 GND
 Wire Wire Line
 	5100 1800 5100 1700
-$Comp
-L R R6
-U 1 1 5A7781E8
-P 6950 1400
-F 0 "R6" V 7030 1400 50  0000 C CNN
-F 1 "4K7" V 6950 1400 50  0000 C CNN
-F 2 "Resistors_SMD:R_0402" V 6880 1400 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 6950 1400 50  0001 C CNN
-F 4 "Vishay Dale" H 6950 1400 60  0001 C CNN "MFG Name"
-F 5 "?" H 6950 1400 60  0001 C CNN "MFG Part Num"
-F 6 "?" H 6950 1400 60  0001 C CNN "Distributer PN"
-F 7 "?" H 6950 1400 60  0001 C CNN "Distributer Link"
-	1    6950 1400
-	1    0    0    -1  
-$EndComp
 Text Label 7400 1600 0    60   ~ 0
 Button_reset
 Wire Wire Line
 	6750 1700 6750 1050
-Wire Wire Line
-	6950 1250 6950 1050
-Text Label 6950 1050 0    60   ~ 0
-+5V
-$Comp
-L R R8
-U 1 1 5A778805
-P 7200 1400
-F 0 "R8" V 7280 1400 50  0000 C CNN
-F 1 "4K7" V 7200 1400 50  0000 C CNN
-F 2 "Resistors_SMD:R_0402" V 7130 1400 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 7200 1400 50  0001 C CNN
-F 4 "Vishay Dale" H 7200 1400 60  0001 C CNN "MFG Name"
-F 5 "?" H 7200 1400 60  0001 C CNN "MFG Part Num"
-F 6 "?" H 7200 1400 60  0001 C CNN "Distributer PN"
-F 7 "?" H 7200 1400 60  0001 C CNN "Distributer Link"
-	1    7200 1400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7200 1250 7200 1050
-Text Label 7200 1050 0    60   ~ 0
-+5V
-Wire Wire Line
-	7200 1550 7200 1600
-Connection ~ 7200 1600
-Wire Wire Line
-	6950 1550 6950 1800
-Connection ~ 6950 1800
 $Comp
 L R R4
 U 1 1 5A77979E
@@ -687,10 +641,10 @@ Text Label 7050 3700 0    60   ~ 0
 Text Label 6850 3700 0    60   ~ 0
 +5V
 $Comp
-L PWR_FLAG-RESCUE-nk-u2f #FLG1
+L PWR_FLAG-RESCUE-nk-u2f #FLG02
 U 1 1 5A77BCD6
 P 9250 5800
-F 0 "#FLG1" H 9250 5895 50  0001 C CNN
+F 0 "#FLG02" H 9250 5895 50  0001 C CNN
 F 1 "PWR_FLAG" H 9250 5980 50  0000 C CNN
 F 2 "" H 9250 5800 50  0000 C CNN
 F 3 "" H 9250 5800 50  0000 C CNN
@@ -699,4 +653,6 @@ F 3 "" H 9250 5800 50  0000 C CNN
 $EndComp
 Text Notes 10050 2400 2    60   ~ 0
 Debugging Pins\n\n
+Text Label 6750 1050 0    60   ~ 0
++5V
 $EndSCHEMATC

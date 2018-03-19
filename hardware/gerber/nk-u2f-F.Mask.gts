@@ -1,7 +1,7 @@
 G04 #@! TF.FileFunction,Soldermask,Top*
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW 4.0.7) date 2018. March 19., Monday 22:41:37*
+G04 Created by KiCad (PCBNEW 4.0.7) date 2018. March 20., Tuesday 00:31:41*
 %MOMM*%
 %LPD*%
 G01*
