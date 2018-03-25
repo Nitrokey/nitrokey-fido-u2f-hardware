@@ -99,10 +99,11 @@ static void PORTS_0_enter_DefaultMode_from_RESET(void) {
 	 // P0.6 output is push-pull
 	 // P0.7 output is push-pull
 	 */
+
 	SFRPAGE = 0x00;
-	P0MDOUT = P0MDOUT_B0__OPEN_DRAIN | P0MDOUT_B1__OPEN_DRAIN
+	P0MDOUT = P0MDOUT_B0__OPEN_DRAIN | P0MDOUT_B1__OPEN_DRAIN // 0.1: Button
 			| P0MDOUT_B3__OPEN_DRAIN | P0MDOUT_B4__PUSH_PULL
-			| P0MDOUT_B5__OPEN_DRAIN | P0MDOUT_B6__PUSH_PULL
+			| P0MDOUT_B5__OPEN_DRAIN | P0MDOUT_B6__PUSH_PULL  // 0.6: LED
 			| P0MDOUT_B7__PUSH_PULL;
 	// [P0MDOUT - Port 0 Output Mode]$
 
@@ -119,10 +120,10 @@ static void PORTS_0_enter_DefaultMode_from_RESET(void) {
 	 // P0.6 pin is skipped by the crossbar
 	 // P0.7 pin is not skipped by the crossbar
 	 */
-	P0SKIP = P0SKIP_B0__NOT_SKIPPED | P0SKIP_B1__NOT_SKIPPED
-			|P0SKIP_B2__SKIPPED| P0SKIP_B3__SKIPPED | P0SKIP_B4__NOT_SKIPPED
-			| P0SKIP_B5__NOT_SKIPPED | P0SKIP_B6__SKIPPED
-			| P0SKIP_B7__NOT_SKIPPED;
+	P0SKIP = P0SKIP_B0__SKIPPED | P0SKIP_B1__SKIPPED                          // (0.1: Button-GPIO IN, skipped)
+			|P0SKIP_B2__SKIPPED | P0SKIP_B3__SKIPPED | P0SKIP_B4__NOT_SKIPPED // 0.4: TX0
+			|P0SKIP_B5__NOT_SKIPPED | P0SKIP_B6__SKIPPED                      // 0.5: RX0, (0.6: LED-GPIO OUT, skipped)
+			|P0SKIP_B7__SKIPPED;                                              // -
 	// [P0SKIP - Port 0 Skip]$
 
 	// $[P0MASK - Port 0 Mask]
@@ -150,10 +151,12 @@ static void PORTS_1_enter_DefaultMode_from_RESET(void) {
 	 // P1.5 output is push-pull
 	 // P1.6 output is push-pull
 	 */
-	P1MDOUT = P1MDOUT_B0__PUSH_PULL | P1MDOUT_B1__PUSH_PULL
-			| P1MDOUT_B2__OPEN_DRAIN | P1MDOUT_B3__OPEN_DRAIN
-			| P1MDOUT_B4__OPEN_DRAIN | P1MDOUT_B5__PUSH_PULL
-			| P1MDOUT_B6__PUSH_PULL;
+	P1MDOUT = P1MDOUT_B0__OPEN_DRAIN | P1MDOUT_B1__OPEN_DRAIN // 1.1: I2C SDA
+			| P1MDOUT_B2__OPEN_DRAIN | P1MDOUT_B3__OPEN_DRAIN // 1.2: I2C SCL
+			| P1MDOUT_B4__OPEN_DRAIN | P1MDOUT_B5__OPEN_DRAIN
+			| P1MDOUT_B6__OPEN_DRAIN;
+
+	// P1SKIP = 0;                          // Default, 1.0: PCA0_CEX1(Green LED), 1.1: PCA0_CEX2(Red LED)
 	// [P1MDOUT - Port 1 Output Mode]$
 
 	// $[P1MDIN - Port 1 Input Mode]
@@ -167,7 +170,7 @@ static void PORTS_1_enter_DefaultMode_from_RESET(void) {
 
 	// $[P1MAT - Port 1 Match]
 	// [P1MAT - Port 1 Match]$
-
+	P1SKIP = P1SKIP_B0__SKIPPED;          // Jump 1.0 to assign I2C to 1.1 and 1.2
 }
 
 //================================================================================
@@ -269,7 +272,7 @@ static void PBCFG_0_enter_DefaultMode_from_RESET(void) {
 	 // T1 unavailable at Port pin
 	 // T2 unavailable at Port pin
 	 */
-	XBR1 = XBR1_PCA0ME__CEX0_CEX1_CEX2 | XBR1_ECIE__DISABLED
+	XBR1 = XBR1_PCA0ME__DISABLED | XBR1_ECIE__DISABLED
 			| XBR1_T0E__DISABLED | XBR1_T1E__DISABLED | XBR1_T2E__DISABLED;
 	// [XBR1 - Port I/O Crossbar 1]$
 

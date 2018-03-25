@@ -32,6 +32,12 @@
 #include "u2f_hid.h"
 
 
+// hw settings
+#define BUTTON_MIN_PRESS_T_MS    750
+
+#define LED_BLINK_T_ON           100                                 // ms
+#define LED_BLINK_T_OFF          (LedBlinkPeriodT - LED_BLINK_T_ON)  // ms
+#define LED_BLINK_NUM_INF        255
 
 // application settings
 #define U2F_ATTESTATION_KEY_SLOT	15
@@ -46,6 +52,9 @@
 
 // Uncomment this to make configuration firmware
 //#define ATECC_SETUP_DEVICE
+
+// Touch button test function
+//#define __BUTTON_TEST__                             // Button drives directly the LED. Minimal required press time is determined by BUTTON_MIN_PRESS_T_MS
 
 //#define U2F_PRINT
 //#define U2F_BLINK_ERRORS
@@ -146,10 +155,12 @@ uint8_t get_app_state();
 
 void set_app_state(APP_STATE s);
 
-void rgb(uint8_t r, uint8_t g, uint8_t b);
-#define rgb_hex(c) (rgb((c)&0xff,((c)>>8)&0xff,((c)>>16)&0xff))
-
-void app_wink(uint32_t color);
+void     LedOn           (void);
+void     LedOff          (void);
+void     LedBlink        (uint8_t blink_num, uint16_t period_t);
+void     TaskLedBlink    (void);
+void     TaskButton      (void);
+uint8_t  IsButtonPressed (void);
 
 // should be called after initializing eeprom
 void u2f_init();

@@ -41,12 +41,31 @@
 #include "u2f.h"
 #include "tests.h"
 
+#define ms_since(ms,num) (((uint16_t)get_ms() - (ms)) >= num ? ((ms=(uint16_t)get_ms())):0)
+
+typedef enum {
+	BST_UNPRESSED,
+	BST_PRESSED_RECENTLY,
+	BST_PRESSED_REGISTERED,
+
+	BST_MAX_NUM
+} BUTTON_STATE_T;
+
+
 data struct APP_DATA appdata;
 
 uint8_t error;
 uint8_t state;
-uint32_t winkc;
+
+data  uint32_t        ButtonPressT;                   // Timer for TaskButton() timings
+data  BUTTON_STATE_T  ButtonState;                    // Holds the actual registered logical state of the button
+
+static data uint32_t  LedBlinkTmr;                    // Timer for TaskLedBlink() timings
+static data uint16_t  LedBlinkPeriodT;                // Period time register
+static data uint8_t   LedBlinkNum;                    // Blink number counter, also an indicator if blinking is on
+
 struct u2f_hid_msg * hid_msg;
+
 
 static void init(struct APP_DATA* ap)
 {
@@ -55,7 +74,6 @@ static void init(struct APP_DATA* ap)
 	smb_init();
 	atecc_idle();
 
-	U2F_BUTTON_VAL = 1;
 	state = APP_NOTHING;
 	error = ERROR_NOTHING;
 }
@@ -75,18 +93,6 @@ uint8_t get_app_state()
 	return state;
 }
 
-void set_app_state(APP_STATE s)
-{
-	state = s;
-}
-
-void app_wink(uint32_t c)
-{
-#ifdef U2F_SUPPORT_WINK
-	winkc = c;
-	set_app_state(APP_WINK);
-#endif
-}
 
 void set_app_u2f_hid_msg(struct u2f_hid_msg * msg )
 {
@@ -94,59 +100,16 @@ void set_app_u2f_hid_msg(struct u2f_hid_msg * msg )
 	hid_msg = msg;
 }
 
-
-
-void rgb(uint8_t r, uint8_t g, uint8_t b)
-{
-
-	if (r)
-	{
-		PCA0CPM2 |= PCA0CPM2_PWM__ENABLED;
-		LED_R(r);
-	}
-	else
-	{
-		PCA0CPM2 &= ~PCA0CPM2_PWM__ENABLED;
-	}
-
-	if (b)
-	{
-		PCA0CPM0 |= PCA0CPM0_PWM__ENABLED;
-		LED_B(b);
-	}
-	else
-	{
-		PCA0CPM0 &= ~PCA0CPM0_PWM__ENABLED;
-	}
-
-	if (g)
-	{
-		PCA0CPM1 |= PCA0CPM1_PWM__ENABLED;
-		LED_G(g);
-	}
-	else
-	{
-		PCA0CPM1 &= ~PCA0CPM1_PWM__ENABLED;
-	}
-
-}
-
-
-#define ms_since(ms,num) (((uint16_t)get_ms() - (ms)) >= num ? ((ms=(uint16_t)get_ms())):0)
-
 int16_t main(void) {
-
 	uint16_t ms_heart;
 	uint16_t ms_wink;
-	uint16_t ms_grad;
-	uint8_t winks = 0, light = 1, grad_dir = 0;
-	int8_t grad_inc = 0;
-	int8_t ii;
-	uint16_t i;
 	data uint8_t xdata * clear = 0;
+	uint16_t i;
+    #ifdef U2F_BLINK_ERRORS
+	uint16_t ii;
+    #endif
 
 	enter_DefaultMode_from_RESET();
-	rgb_hex(0);
 
 	// ~200 ms interval watchdog
 	WDTCN = 4;
@@ -162,18 +125,27 @@ int16_t main(void) {
 
 	if (RSTSRC & RSTSRC_WDTRSF__SET)
 	{
-		error = ERROR_DAMN_WATCHDOG;
+		set_app_error(ERROR_DAMN_WATCHDOG);
 	}
 
 	run_tests();
-
+	ButtonState = BST_UNPRESSED;
+	LedOff();
 	atecc_setup_init(appdata.tmp);
 
-	rgb_hex(0);
+	LedBlink(1, 0);                                   // Blink once after successful startup
 
 	while (1) {
-
 		watchdog();
+
+        TaskButton();
+        TaskLedBlink();
+        #ifdef __BUTTON_TEST__
+        if (!LedBlinkNum) {
+            if (IsButtonPressed()) { LedOn();  }
+            else                   { LedOff(); }
+        }
+        #endif
 
 		if (!USBD_EpIsBusy(EP1OUT) && !USBD_EpIsBusy(EP1IN) && state != APP_HID_MSG)
 		{
@@ -182,77 +154,21 @@ int16_t main(void) {
 
 		u2f_hid_check_timeouts();
 
-		switch(state)
-		{
-			case APP_NOTHING:
-				// Flash gradient on LED
-				if (ms_since(ms_grad, 150))
-				{
-					if (light == 16)
-					{
-						grad_dir = 0;
-					}
-					else if (light == 1)
-					{
-						grad_dir = 1;
-					}
-					if (grad_dir)
-						if (U2F_BUTTON_IS_PRESSED())
-							rgb(0,0,light++);
-						else
-							rgb(0,light++,0);
-					else
-						if (U2F_BUTTON_IS_PRESSED())
-							rgb(0,0,light--);
-						else
-							rgb(0,light--,0);
-				}
-				break;
-			case APP_HID_MSG:
-				// HID msg received, pass to protocols
-				if (custom_command(hid_msg))
-				{
+		switch(state) {
+			case APP_NOTHING: {}break;                     // Idle state:
 
-				}
-				else
-				{
-					u2f_hid_request(hid_msg);
+			case APP_HID_MSG: {                            // HID msg received, pass to protocols:
+				uint8_t msg_is_hid_req;
+
+				msg_is_hid_req = !custom_command(hid_msg); // Parse at first as a custom cmd: Custom cmd processing
+				if (msg_is_hid_req) {                      // It isnt a custom cmd, so must be a HID request
+					u2f_hid_request(hid_msg);              // HID msg processing
 				}
 
-				if (state == APP_HID_MSG)
-					state = APP_NOTHING;
-				break;
-#ifdef U2F_SUPPORT_WINK
-			case APP_WINK:
-				// Do wink pattern for USB HID wink request
-				rgb_hex(winkc);
-				light = 1;
-				ms_wink = get_ms();
-				state = _APP_WINK;
-				break;
-			case _APP_WINK:
-
-				if (ms_since(ms_wink,150))
-				{
-					if (light)
-					{
-						light = 0;
-						rgb_hex(winkc);
-					}
-					else
-					{
-						light = 1;
-						rgb_hex(0);
-					}
-					winks++;
+				if (state == APP_HID_MSG) {                // The USB msg doesnt ask a special app state
+					state = APP_NOTHING;	               // We can go back to idle
 				}
-				if (winks == 5)
-				{
-					winks = 0;
-					state = APP_NOTHING;
-				}
-				break;
-#endif
+			}break;
 		}
 
 		if (error)
@@ -275,9 +191,8 @@ int16_t main(void) {
 
 			}
 #else
-			rgb_hex(U2F_DEFAULT_COLOR_ERROR);
-			// wipe ram
-			for (i=0; i<0x400;i++)
+			//LedBlink(LED_BLINK_NUM_INF, 375);       // Blink wont work because of the following
+			for (i=0; i<0x400;i++)                    // wipe ram
 			{
 				*(clear++) = 0x0;
 				watchdog();
@@ -289,11 +204,69 @@ int16_t main(void) {
 				watchdog();
 			}
 		}
-
-
-
-
 	}
 }
 
+
+void TaskButton (void) {                       // Requires at least a 750ms long button press to register a valid user button press
+	if (IS_BUTTON_PRESSED()) {                        // Button's physical state: pressed
+		switch (ButtonState) {                        // Handle press phase
+		    case BST_UNPRESSED: {                     // It happened at this moment
+				ButtonState  = BST_PRESSED_RECENTLY;  // Update button state
+				ButtonPressT = get_ms();              // Start measure press time
+		    }break;
+		    case BST_PRESSED_RECENTLY: {              // Button is already pressed, press time measurement is ongoing
+				if (get_ms() - ButtonPressT >= BUTTON_MIN_PRESS_T_MS) { // Press time reached the critical value to register a valid user touch
+				    ButtonState = BST_PRESSED_REGISTERED; // Update button state
+				}
+		    }break;
+		    default: {}break;
+		}
+	} else {                                          // Button is unprssed
+		ButtonState = BST_UNPRESSED;                  // Update button state
+	}
+}
+
+uint8_t IsButtonPressed (void) {
+	return ((ButtonState == BST_PRESSED_REGISTERED)? 1 : 0);
+}
+
+
+void LedOn (void) {
+	LedBlinkNum = 0;                                  // Stop ongoing blinking
+	LED_ON();                                         // LED physical state -> ON
+}
+
+void LedOff (void) {
+	LedBlinkNum = 0;                                  // Stop ongoing blinking
+	LED_OFF();                                        // LED physical state -> OFF
+}
+
+void LedBlink (uint8_t blink_num, uint16_t period_t) {
+	LedBlinkNum     = blink_num;
+	LedBlinkPeriodT = period_t;
+	LedBlinkTmr     = get_ms();
+    LED_ON();
+}
+
+void TaskLedBlink (void) {
+	if (LedBlinkNum) {                                     // LED blinking is on
+		if (IS_LED_ON()) {                                 // ON state
+			if (get_ms() - LedBlinkTmr >= LED_BLINK_T_ON) { // ON time expired
+				LED_OFF();                                 // LED physical state -> OFF
+				if (LedBlinkNum) {                         // It isnt the last blink round: initialize OFF state:
+					LedBlinkTmr   = get_ms();		       // Init OFF timer
+					if (LedBlinkNum != 255) {              // Not endless blinking:
+						LedBlinkNum--;                     // Update the remaining blink num
+					}
+				}
+			}
+		} else {                                           // OFF state
+			if (get_ms() - LedBlinkTmr >= LED_BLINK_T_OFF) { // OFF time expired
+				LED_ON();                                  // LED physical state -> ON
+				LedBlinkTmr   = get_ms();		           // Init ON timer
+			}
+		}
+	}
+}
 
