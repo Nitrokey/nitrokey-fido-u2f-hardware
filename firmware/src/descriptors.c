@@ -124,10 +124,11 @@ SI_SEGMENT_VARIABLE(configDesc[],
 };
 
 #define LANG_STRING   htole16( SLAB_USB_LANGUAGE )
-#define MFR_STRING                             "Silicon Labs"
-#define PROD_STRING                            "U2F Zero"
+
+#define MFR_STRING                             "Nitrokey"
+#define PROD_STRING                            "Nitrokey FIDO U2F"
 #define SER_STRING 							   "CAFEBABEFFFFFFFF"
-#define INT0_STRING                            "U2F Zero"
+#define INT0_STRING                            "Nitrokey FIDO U2F"
 
 
 LANGID_STATIC_CONST_STRING_DESC( langDesc[], LANG_STRING );

@@ -70,32 +70,25 @@ int8_t u2f_get_user_feedback()
 {
 	uint32_t t;
 	u2f_delay(1);
+	while(IsButtonPressed()){                         // Wait to release button
+		watchdog();
+	}
 	t = get_ms();
-	while(U2F_BUTTON_IS_PRESSED()){}
-	while(!U2F_BUTTON_IS_PRESSED())
+	LedBlink(LED_BLINK_NUM_INF, 375);
+	while(!IsButtonPressed())                         // Wait to push button
 	{
-		// turn red
-		if (serious)
-		{
-			rgb_hex(U2F_DEFAULT_COLOR_ERROR);
-		}
-		else
-		{	// yellow
-			rgb_hex(U2F_DEFAULT_COLOR_INPUT);
-		}
-		if (get_ms() - t > U2F_MS_USER_INPUT_WAIT)
-			break;
+		TaskLedBlink();                               // Run button driver
+        TaskButton();                                 // Run led driver to ensure blinking
+		if (get_ms() - t > U2F_MS_USER_INPUT_WAIT)    // 3 secs elapsed without button press
+			break;                                    // Timeout
 		watchdog();
 	}
 
-	if (U2F_BUTTON_IS_PRESSED())
-	{
-		rgb_hex(U2F_DEFAULT_COLOR_INPUT_SUCCESS);
-	}
-	else
-	{
-		rgb_hex(U2F_DEFAULT_COLOR_ERROR);
-		return 1;
+	if (IsButtonPressed()) {                          // Button has been pushed in time
+		LedOn();
+	} else {                                          // Button hasnt been pushed within the timeout
+		LedBlink(LED_BLINK_NUM_INF, 375);
+		return 1;                                     // Return error code
 	}
 
 	return 0;

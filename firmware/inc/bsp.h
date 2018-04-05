@@ -33,46 +33,23 @@
 #include "descriptors.h"
 #include "app.h"
 
-
 extern data uint32_t _MS_;
 extern SI_SEGMENT_VARIABLE(myUsbDevice, USBD_Device_TypeDef, MEM_MODEL_SEG);
 
-#define get_ms() _MS_
+SI_SBIT(U2F_BUTTON, SFR_P0, 1);
+SI_SBIT(U2F_LED,    SFR_P0, 6);
 
-#define GetEp(epAddr)  (&myUsbDevice.ep0 + epAddr)
+#define IS_BUTTON_PRESSED()      (U2F_BUTTON == 0)
+#define LED_ON()                 { U2F_LED = 0; }
+#define LED_OFF()                { U2F_LED = 1; }
+#define IS_LED_ON()              (U2F_LED == 0)
+#define GetEp(epAddr)            (&myUsbDevice.ep0 + epAddr)
+#define watchdog()	             (WDTCN = 0xA5)
+#define reboot()	             (RSTSRC = 1 << 4)
+#define get_ms()                  _MS_
 
-SI_SBIT(U2F_BUTTON, SFR_P1, 5);
-SI_SBIT(U2F_BUTTON_VAL, SFR_P1, 6);
-
-#define U2F_BUTTON_IS_PRESSED() (U2F_BUTTON == 0)
-
-SI_SBIT(U2F_RED, SFR_P1, 1);
-SI_SBIT(U2F_GREEN, SFR_P1, 0);
-SI_SBIT(U2F_BLUE, SFR_P0, 7);
-
-
-// Set brightness via PWM
-#define LED_B(x)\
-	PCA0CPL0 = ((((uint8_t)(x))) << PCA0CPL0_PCA0CPL0__SHIFT);\
-	PCA0CPH0 = ((((uint8_t)(x))) << PCA0CPH0_PCA0CPH0__SHIFT)
-
-#define LED_G(x)\
-	PCA0CPL1 = ((((uint8_t)(x))) << PCA0CPL1_PCA0CPL1__SHIFT); \
-	PCA0CPH1 = ((((uint8_t)(x))) << PCA0CPH1_PCA0CPH1__SHIFT)
-
-#define LED_R(x)\
-	PCA0CPL2 = ((((uint8_t)(x))) << PCA0CPL2_PCA0CPL2__SHIFT);\
-	PCA0CPH2 = ((((uint8_t)(x))) << PCA0CPH2_PCA0CPH2__SHIFT)
-
-#define watchdog()	(WDTCN = 0xA5)
-
-#define reboot()	(RSTSRC = 1 << 4)
-
-void u2f_delay(uint32_t ms);
-
-void usb_write(uint8_t* buf, uint8_t len);
-
-
+void u2f_delay  (uint32_t ms);
+void usb_write  (uint8_t* buf, uint8_t len);
 
 #ifdef U2F_PRINT
 

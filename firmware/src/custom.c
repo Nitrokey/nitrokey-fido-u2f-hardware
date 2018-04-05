@@ -73,9 +73,7 @@ uint8_t custom_command(struct u2f_hid_msg * msg)
 #endif
 #ifdef U2F_SUPPORT_WINK
 		case U2F_CUSTOM_WINK:
-
-			app_wink(U2F_COLOR_WINK);
-
+			LedBlink(5, 300);
 			break;
 #endif
 		case U2F_CONFIG_BOOTLOADER:

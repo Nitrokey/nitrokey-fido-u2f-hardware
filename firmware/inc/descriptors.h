@@ -26,11 +26,11 @@ extern "C" {
 #endif
 
 // $[Vendor ID]
-#define USB_VENDOR_ID                      htole16(0x10c4)
+#define USB_VENDOR_ID                      htole16(0x20A0)
 // [Vendor ID]$
 
 // $[Product ID]
-#define USB_PRODUCT_ID                     htole16(0x8acf)
+#define USB_PRODUCT_ID                     htole16(0x4287)
 // [Product ID]$
 
 #define HID_PACKET_SIZE 					64

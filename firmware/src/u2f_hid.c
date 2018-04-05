@@ -434,7 +434,8 @@ static uint8_t hid_u2f_parse(struct u2f_hid_msg* req)
 			u2f_hid_set_len(0);
 			u2f_hid_writeback(NULL, 0);
 			u2f_hid_flush();
-			app_wink(U2F_COLOR_WINK);
+			LedBlink(5, 300);
+
 			break;
 #endif
 #ifdef U2F_SUPPORT_HID_LOCK
