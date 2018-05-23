@@ -36,8 +36,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Nitrokey FIDO U2F"
-Date "2018-01-29"
-Rev "R3"
+Date "2018-05-23"
+Rev "R5"
 Comp "Nitrokey"
 Comment1 ""
 Comment2 ""
@@ -130,28 +130,6 @@ C2CK
 Text Label 10050 1850 2    60   ~ 0
 C2D
 $Comp
-L debug-pin TP9
-U 1 1 56A3F7EB
-P 9950 2850
-F 0 "TP9" V 9750 2300 60  0000 C CNN
-F 1 "debug-pin" H 10050 2600 60  0001 C CNN
-F 2 "footprints:Prog_Pad" H 9950 2850 60  0001 C CNN
-F 3 "" H 9950 2850 60  0000 C CNN
-	1    9950 2850
-	0    1    1    0   
-$EndComp
-$Comp
-L debug-pin TP8
-U 1 1 56A3F89E
-P 9950 2750
-F 0 "TP8" V 9750 2200 60  0000 C CNN
-F 1 "debug-pin" H 10050 2500 60  0001 C CNN
-F 2 "footprints:Prog_Pad" H 9950 2750 60  0001 C CNN
-F 3 "" H 9950 2750 60  0000 C CNN
-	1    9950 2750
-	0    1    1    0   
-$EndComp
-$Comp
 L debug-pin TP5
 U 1 1 56A3F8D6
 P 9900 1550
@@ -173,10 +151,6 @@ F 3 "" H 9900 1650 60  0000 C CNN
 	1    9900 1650
 	0    -1   -1   0   
 $EndComp
-Text Label 9800 2650 0    60   ~ 0
-TX
-Text Label 9800 2550 0    60   ~ 0
-RX
 NoConn ~ 1500 1400
 Text Label 3050 1200 0    60   ~ 0
 GND
@@ -319,11 +293,11 @@ Wire Wire Line
 Wire Wire Line
 	4950 6500 4650 6500
 $Comp
-L EFM8UB1xFxxG-QFN20 U1
+L EFM8UBx-QFN20 U1
 U 1 1 58B4B07B
 P 6000 4400
 F 0 "U1" H 5500 5100 60  0000 C CNN
-F 1 "EFM8UB1xFxxG-QFN20" H 5150 5250 60  0000 C CNN
+F 1 "EFM8UB30F40G-A" H 5150 5250 60  0000 C CNN
 F 2 "footprints:QFN-20-0.5mm-user" H 5800 4450 60  0001 C CNN
 F 3 "" H 5800 4450 60  0001 C CNN
 	1    6000 4400
@@ -416,14 +390,6 @@ Wire Wire Line
 	6200 3600 6200 3100
 Text Label 6200 3100 1    60   ~ 0
 LED
-Wire Wire Line
-	6100 3600 6100 3100
-Wire Wire Line
-	6000 3600 6000 3100
-Text Label 6000 3100 1    60   ~ 0
-TX
-Text Label 6100 3100 1    60   ~ 0
-RX
 Wire Wire Line
 	5250 4200 4700 4200
 NoConn ~ 5250 4300
@@ -528,19 +494,6 @@ F 3 "" H 9350 2150 60  0000 C CNN
 $EndComp
 Text Label 9200 1950 0    60   ~ 0
 +5V
-$Comp
-L debug-pin TP7
-U 1 1 58BF71CE
-P 9950 2650
-F 0 "TP7" V 9750 2100 60  0000 C CNN
-F 1 "debug-pin" H 10050 2400 60  0001 C CNN
-F 2 "footprints:Prog_Pad" H 9650 2750 60  0001 C CNN
-F 3 "" H 9950 2650 60  0000 C CNN
-	1    9950 2650
-	0    1    1    0   
-$EndComp
-Text Label 9800 2450 0    60   ~ 0
-GND
 Wire Wire Line
 	5100 1800 5100 1700
 Text Label 7400 1600 0    60   ~ 0
@@ -651,8 +604,8 @@ F 3 "" H 9250 5800 50  0000 C CNN
 	1    9250 5800
 	-1   0    0    1   
 $EndComp
-Text Notes 10050 2400 2    60   ~ 0
-Debugging Pins\n\n
 Text Label 6750 1050 0    60   ~ 0
 +5V
+NoConn ~ 6000 3600
+NoConn ~ 6100 3600
 $EndSCHEMATC
