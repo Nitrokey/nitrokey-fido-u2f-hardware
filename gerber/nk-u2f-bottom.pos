@@ -1,16 +1,21 @@
-### Module positions - created on So 14 Jan 2018 19:45:03 CET ###
-### Printed by Pcbnew version kicad 4.0.2+dfsg1-stable
+### Module positions - created on Wednesday, 19 September 2018 at 23:40:37 ###
+### Printed by Pcbnew version pcbnew (5.0.0-3-g5ebb6b6)
 ## Unit = mm, Angle = deg.
 ## Side : bottom
-# Ref     Val        Package                          PosX       PosY       Rot  Side
-C1        0.1uF      C_0402                        -2.9750     5.8465   90.0000  bottom
-C2        0.1uF      C_0402                        -5.4750    -7.0535  180.0000  bottom
-C3        4.7uF      C_0402                         3.1250    -4.9535  270.0000  bottom
-D1        LED_Small  LED_0402                     -11.3750    -0.0535  270.0000  bottom
-R1        4K7        R_0402                        -5.4750    -5.5535    0.0000  bottom
-R2        10K        R_0402                         0.4750    -5.7035   90.0000  bottom
-R3        100        R_0402                       -11.4250    -2.0535  270.0000  bottom
-U2        MTCH101    SOT-23-6                      -2.0750    -5.8535  270.0000  bottom
-U3        DF5A5.6JE  SOT-553                        2.1250     5.4465  270.0000  bottom
-U4        ATECC508A  DFN-8-1EP_3x3mm_Pitch0.5mm    -0.6750     5.3465  270.0000  bottom
+# Ref     Val             Package                          PosX       PosY       Rot  Side
+C1        0.1uF           C_0402                         2.4452     5.6133   90.0000  bottom
+C2        0.1uF           C_0402                        -3.0158    -6.8200   90.0000  bottom
+C3        4.7uF           C_0402                        -4.2858    -5.3595  270.0000  bottom
+C4        0.1uF           C_0402                        -3.1276     2.2961   90.0000  bottom
+D1        LED_Small       LED_0402                      11.3750    -0.0535  270.0000  bottom
+R1        4K7             R_0402                         1.2565    -5.0903    0.0000  bottom
+R2        10K             R_0402                        -3.0260    -4.9937   90.0000  bottom
+R3        100             R_0402                         1.2514    -6.1596    0.0000  bottom
+R4        4K7             R_0402                        -3.0412    -0.3485  270.0000  bottom
+R5        4K7             R_0402                        -1.7077    -3.1679   90.0000  bottom
+R7        4K7             R_0402                        -2.7745    -3.1679   90.0000  bottom
+U1        EFM8UB30F40G-A  QFN-20-0.5mm-user             -0.7250    -0.1535  270.0000  bottom
+U2        MTCH101         SOT-23-6                      -1.0625    -5.7483  270.0000  bottom
+U3        DF5A5.6JE       SOT-553                       -2.2792     5.5752  270.0000  bottom
+U4        ATECC508A       DFN-8-1EP_3x3mm_Pitch0.5mm     0.6926     5.6133  270.0000  bottom
 ## End
