@@ -1,11 +1,11 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# nk-u2f-rescue:ATECC508A-RESCUE-u2f-zero
+# ATECC508A-RESCUE-u2f-zero
 #
-DEF nk-u2f-rescue:ATECC508A-RESCUE-u2f-zero A 0 40 Y Y 1 F N
+DEF ATECC508A-RESCUE-u2f-zero A 0 40 Y Y 1 F N
 F0 "A" 300 300 60 H V C CNN
-F1 "nk-u2f-rescue:ATECC508A-RESCUE-u2f-zero" -100 300 60 H V C CNN
+F1 "ATECC508A-RESCUE-u2f-zero" -100 300 60 H V C CNN
 F2 "" -400 250 60 H V C CNN
 F3 "" -400 250 60 H V C CNN
 DRAW
@@ -21,29 +21,11 @@ X VCC 8 600 150 276 L 39 39 1 1 P
 ENDDRAW
 ENDDEF
 #
-# nk-u2f-rescue:C
+# DF5A5.6JE
 #
-DEF nk-u2f-rescue:C C 0 10 N Y 1 F N
-F0 "C" 25 100 50 H V L CNN
-F1 "nk-u2f-rescue:C" 25 -100 50 H V L CNN
-F2 "" 38 -150 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-$FPLIST
- C_*
-$ENDFPLIST
-DRAW
-P 2 0 1 20 -80 -30 80 -30 N
-P 2 0 1 20 -80 30 80 30 N
-X ~ 1 0 150 110 D 50 50 1 1 P
-X ~ 2 0 -150 110 U 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# nk-u2f-rescue:DF5A5.6JE
-#
-DEF nk-u2f-rescue:DF5A5.6JE Z 0 40 Y Y 1 F N
+DEF DF5A5.6JE Z 0 40 Y Y 1 F N
 F0 "Z" -400 50 60 H V C CNN
-F1 "nk-u2f-rescue:DF5A5.6JE" -550 150 60 H V C CNN
+F1 "DF5A5.6JE" -550 150 60 H V C CNN
 F2 "" 0 0 60 H V C CNN
 F3 "" 0 0 60 H V C CNN
 DRAW
@@ -56,11 +38,11 @@ X C4 5 150 -300 79 U 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# nk-u2f-rescue:EFM8UBx-QFN20
+# EFM8UBx-QFN20
 #
-DEF nk-u2f-rescue:EFM8UBx-QFN20 U 0 40 Y Y 1 F N
+DEF EFM8UBx-QFN20 U 0 40 Y Y 1 F N
 F0 "U" -450 850 60 H V C CNN
-F1 "nk-u2f-rescue:EFM8UBx-QFN20" 0 950 60 H V C CNN
+F1 "EFM8UBx-QFN20" 0 950 60 H V C CNN
 F2 "" -200 50 60 H I C CNN
 F3 "" -200 50 60 H I C CNN
 $FPLIST
@@ -92,33 +74,11 @@ X C2CK 9 100 -800 200 U 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# nk-u2f-rescue:LED_Small
+# MTCH101
 #
-DEF nk-u2f-rescue:LED_Small D 0 10 N N 1 F N
-F0 "D" -50 125 50 H V L CNN
-F1 "nk-u2f-rescue:LED_Small" -175 -100 50 H V L CNN
-F2 "" 0 0 50 V I C CNN
-F3 "" 0 0 50 V I C CNN
-$FPLIST
- LED-*
- LED_*
-$ENDFPLIST
-DRAW
-P 2 0 1 0 -30 -40 -30 40 N
-P 2 0 1 0 40 0 -30 0 N
-P 4 0 1 0 30 -40 -30 0 30 40 30 -40 N
-P 5 0 1 0 0 30 -20 50 -10 50 -20 50 -20 40 N
-P 5 0 1 0 20 50 0 70 10 70 0 70 0 60 N
-X K 1 -100 0 70 R 50 50 1 1 P
-X A 2 100 0 70 L 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# nk-u2f-rescue:MTCH101
-#
-DEF nk-u2f-rescue:MTCH101 U 0 40 Y Y 1 F N
+DEF MTCH101 U 0 40 Y Y 1 F N
 F0 "U" -200 350 60 H V C CNN
-F1 "nk-u2f-rescue:MTCH101" -50 250 60 H V C CNN
+F1 "MTCH101" -50 250 60 H V C CNN
 F2 "" 100 -250 60 H I C CNN
 F3 "" 100 -250 60 H I C CNN
 $FPLIST
@@ -135,11 +95,11 @@ X MTPM 6 500 100 200 L 50 50 1 1 B
 ENDDRAW
 ENDDEF
 #
-# nk-u2f-rescue:PWR_FLAG-RESCUE-nk-u2f
+# PWR_FLAG-RESCUE-nk-u2f
 #
-DEF nk-u2f-rescue:PWR_FLAG-RESCUE-nk-u2f #FLG 0 0 N N 1 F P
+DEF PWR_FLAG-RESCUE-nk-u2f #FLG 0 0 N N 1 F P
 F0 "#FLG" 0 95 50 H I C CNN
-F1 "nk-u2f-rescue:PWR_FLAG-RESCUE-nk-u2f" 0 180 50 H V C CNN
+F1 "PWR_FLAG-RESCUE-nk-u2f" 0 180 50 H V C CNN
 F2 "" 0 0 50 H V C CNN
 F3 "" 0 0 50 H V C CNN
 DRAW
@@ -148,29 +108,11 @@ X pwr 1 0 0 0 U 50 50 0 0 w
 ENDDRAW
 ENDDEF
 #
-# nk-u2f-rescue:R
+# TouchPAD
 #
-DEF nk-u2f-rescue:R R 0 0 N Y 1 F N
-F0 "R" 80 0 50 V V C CNN
-F1 "nk-u2f-rescue:R" 0 0 50 V V C CNN
-F2 "" -70 0 50 V I C CNN
-F3 "" 0 0 50 H I C CNN
-$FPLIST
- R_*
- R_*
-$ENDFPLIST
-DRAW
-S -40 -100 40 100 0 1 10 N
-X ~ 1 0 150 50 D 50 50 1 1 P
-X ~ 2 0 -150 50 U 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# nk-u2f-rescue:TouchPAD
-#
-DEF nk-u2f-rescue:TouchPAD P 0 40 Y Y 1 F N
+DEF TouchPAD P 0 40 Y Y 1 F N
 F0 "P" -100 300 60 H V C CNN
-F1 "nk-u2f-rescue:TouchPAD" 50 200 60 H V C CNN
+F1 "TouchPAD" 50 200 60 H V C CNN
 F2 "" 0 0 60 H I C CNN
 F3 "" 0 0 60 H I C CNN
 DRAW
@@ -179,31 +121,28 @@ X PIN 1 -350 0 200 R 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# nk-u2f-rescue:USB_Plug
+# USB_Plug
 #
-DEF ~nk-u2f-rescue:USB_Plug J 0 40 Y Y 1 F N
+DEF ~USB_Plug J 0 40 Y Y 1 F N
 F0 "J" -75 250 60 H V C CNN
-F1 "nk-u2f-rescue:USB_Plug" -400 250 60 H I C CNN
+F1 "USB_Plug" -100 -250 60 H I C CNN
 F2 "" 0 0 60 H V C CNN
 F3 "" 0 0 60 H V C CNN
 DRAW
-T 0 -300 50 60 0 0 0 USB Normal 1 C C
-P 6 0 0 0 -150 200 -300 200 0 200 0 -200 -300 -200 -150 -200 N
-P 4 0 1 0 -300 200 -550 200 -550 -200 -300 -200 N
+T 900 -200 0 60 0 0 0 USB Normal 1 C C
+P 5 0 0 0 -150 200 0 200 0 -200 -150 -200 -150 -200 N
 X VCC 1 200 150 200 L 50 50 1 1 I
 X D- 2 200 50 200 L 50 50 1 1 I
 X D+ 3 200 -50 200 L 50 50 1 1 I
 X GND 4 200 -150 200 L 50 50 1 1 I
-X NC1 5 -400 -300 100 U 50 50 1 1 B
-X NC2 6 -250 -300 100 U 50 50 1 1 B
 ENDDRAW
 ENDDEF
 #
-# nk-u2f-rescue:debug-pin
+# debug-pin
 #
-DEF ~nk-u2f-rescue:debug-pin p 0 40 Y Y 1 F N
+DEF ~debug-pin p 0 40 Y Y 1 F N
 F0 "p" -400 -250 60 H V C CNN
-F1 "nk-u2f-rescue:debug-pin" 100 -250 60 H I C CNN
+F1 "debug-pin" 100 -250 60 H I C CNN
 F2 "" 0 0 60 H V C CNN
 F3 "" 0 0 60 H V C CNN
 DRAW
