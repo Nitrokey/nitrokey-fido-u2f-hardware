@@ -1,43 +1,13 @@
-EESchema Schematic File Version 2
-LIBS:nk-u2f-rescue
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
+EESchema Schematic File Version 4
 LIBS:nk-u2f-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Nitrokey FIDO U2F"
-Date "2018-05-23"
-Rev "R5"
+Date "2018-09-29"
+Rev "R7"
 Comp "Nitrokey"
 Comment1 ""
 Comment2 ""
@@ -45,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L ATECC508A-RESCUE-u2f-zero U4
+L nk-u2f-rescue:ATECC508A-RESCUE-u2f-zero U4
 U 1 1 56857313
 P 2100 1350
 F 0 "U4" H 2400 1650 60  0000 C CNN
@@ -62,38 +32,38 @@ $EndComp
 Text Label 950  1500 0    60   ~ 0
 +5V
 $Comp
-L DF5A5.6JE U3
+L nk-u2f-rescue:DF5A5.6JE U3
 U 1 1 56857EAF
-P 2200 3600
-F 0 "U3" H 1800 3650 60  0000 C CNN
-F 1 "DF5A5.6JE" H 1650 3750 60  0000 C CNN
-F 2 "TO_SOT_Packages_SMD:SOT-553" H 2200 3600 60  0001 C CNN
-F 3 "http://optoelectronics.liteon.com/upload/download/DS22-2008-0044/S_110_LTST-C19HE1WT.pdf" H 2200 3600 60  0001 C CNN
-F 4 "Toshiba Semiconductor and Storage" H 2200 3600 60  0001 C CNN "MFG Name"
-F 5 "DF5A5.6JE,LM" H 2200 3600 60  0001 C CNN "MFG Part Num"
-F 6 "DF5A5.6JELMCT-ND" H 2200 3600 60  0001 C CNN "Distributer PN"
-F 7 "http://www.digikey.com/product-detail/en/DF5A5.6JE,LM/DF5A5.6JELMCT-ND/5403466" H 2200 3600 60  0001 C CNN "Distributer Link"
-	1    2200 3600
+P 2400 4150
+F 0 "U3" H 2000 4200 60  0000 C CNN
+F 1 "DF5A5.6JE" H 1850 4300 60  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:SOT-553" H 2400 4150 60  0001 C CNN
+F 3 "http://optoelectronics.liteon.com/upload/download/DS22-2008-0044/S_110_LTST-C19HE1WT.pdf" H 2400 4150 60  0001 C CNN
+F 4 "Toshiba Semiconductor and Storage" H 2400 4150 60  0001 C CNN "MFG Name"
+F 5 "DF5A5.6JE,LM" H 2400 4150 60  0001 C CNN "MFG Part Num"
+F 6 "DF5A5.6JELMCT-ND" H 2400 4150 60  0001 C CNN "Distributer PN"
+F 7 "http://www.digikey.com/product-detail/en/DF5A5.6JE,LM/DF5A5.6JELMCT-ND/5403466" H 2400 4150 60  0001 C CNN "Distributer Link"
+	1    2400 4150
 	1    0    0    -1  
 $EndComp
-Text Label 5650 6800 0    60   ~ 0
+Text Label 1500 5800 0    60   ~ 0
 GND
 Text Label 4650 7350 0    60   ~ 0
 +5V
-Text Label 2400 3200 2    60   ~ 0
+Text Label 2600 3750 2    60   ~ 0
 +5V
-Text Label 2200 3200 2    60   ~ 0
+Text Label 2400 3750 2    60   ~ 0
 GND
-Text Label 2050 4050 2    60   ~ 0
+Text Label 2250 4600 2    60   ~ 0
 HD-
-Text Label 2350 4050 2    60   ~ 0
+Text Label 2550 4600 2    60   ~ 0
 HD+
 $Comp
-L R R3
+L nk-u2f-rescue:R R3
 U 1 1 56857B9B
 P 10300 3950
 F 0 "R3" V 10380 3950 50  0000 C CNN
-F 1 "100" V 10300 3950 50  0000 C CNN
+F 1 "390" V 10300 3950 50  0000 C CNN
 F 2 "Resistors_SMD:R_0402" V 10230 3950 50  0001 C CNN
 F 3 "?" H 10300 3950 50  0001 C CNN
 F 4 "?" H 10300 3950 60  0001 C CNN "MFG Name"
@@ -103,14 +73,14 @@ F 7 "?" H 10300 3950 60  0001 C CNN "Distributer Link"
 	1    10300 3950
 	0    -1   -1   0   
 $EndComp
-Text Notes 1800 3050 0    60   ~ 0
+Text Notes 2000 3600 0    60   ~ 0
 Protect from ESD
-Text Notes 2600 3550 0    60   ~ 0
+Text Notes 2800 4100 0    60   ~ 0
 Host USB data
 Text Notes 1700 1000 0    60   ~ 0
 Secure element for EC
 $Comp
-L PWR_FLAG-RESCUE-nk-u2f #FLG01
+L nk-u2f-rescue:PWR_FLAG-RESCUE-nk-u2f #FLG01
 U 1 1 5686E60B
 P 9650 5800
 F 0 "#FLG01" H 9650 5895 50  0001 C CNN
@@ -124,13 +94,13 @@ Text Label 9650 5600 0    60   ~ 0
 +5V
 Text Label 9250 5600 0    60   ~ 0
 GND
-NoConn ~ 2000 3300
+NoConn ~ 2200 3850
 Text Label 10050 1750 2    60   ~ 0
 C2CK
 Text Label 10050 1850 2    60   ~ 0
 C2D
 $Comp
-L debug-pin TP5
+L nk-u2f-rescue:debug-pin TP5
 U 1 1 56A3F8D6
 P 9900 1550
 F 0 "TP5" V 9700 950 60  0000 C CNN
@@ -141,7 +111,7 @@ F 3 "" H 9900 1550 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L debug-pin TP6
+L nk-u2f-rescue:debug-pin TP6
 U 1 1 56A3F90D
 P 9900 1650
 F 0 "TP6" V 9700 1050 60  0000 C CNN
@@ -158,7 +128,7 @@ NoConn ~ 2700 1500
 NoConn ~ 2700 1400
 NoConn ~ 2700 1300
 Wire Wire Line
-	4650 6200 4650 7350
+	4650 6200 4650 6500
 Wire Wire Line
 	4650 7150 4950 7150
 Wire Wire Line
@@ -167,19 +137,19 @@ Connection ~ 4650 7150
 Wire Wire Line
 	5500 7150 5250 7150
 Wire Wire Line
-	5500 6200 5500 7150
+	5500 6200 5500 6500
 Connection ~ 5500 6800
 Connection ~ 4650 6800
 Wire Wire Line
-	5250 6800 5650 6800
+	5250 6800 5500 6800
 Wire Wire Line
 	9650 5800 9650 5600
 Wire Wire Line
 	9250 5600 9250 5800
 Wire Wire Line
-	2200 3300 2200 3200
+	2400 3850 2400 3750
 Wire Wire Line
-	2400 3300 2400 3200
+	2600 3850 2600 3750
 Text Label 10700 3950 0    60   ~ 0
 +5V
 Text Label 6100 5700 3    60   ~ 0
@@ -191,7 +161,7 @@ Wire Wire Line
 Text Label 5900 5700 3    60   ~ 0
 +5V
 $Comp
-L debug-pin TP1
+L nk-u2f-rescue:debug-pin TP1
 U 1 1 570602D3
 P 9350 1850
 F 0 "TP1" V 9150 1250 60  0000 C CNN
@@ -204,7 +174,7 @@ $EndComp
 Text Label 9200 1650 0    60   ~ 0
 GND
 $Comp
-L MTCH101 U2
+L nk-u2f-rescue:MTCH101 U2
 U 1 1 58B45395
 P 6100 1700
 F 0 "U2" H 5900 2100 60  0000 C CNN
@@ -215,7 +185,7 @@ F 3 "" H 6100 1700 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L TouchPAD P1
+L nk-u2f-rescue:TouchPAD P1
 U 1 1 58B45501
 P 4700 1600
 F 0 "P1" H 4600 1900 60  0000 C CNN
@@ -226,7 +196,7 @@ F 3 "" H 4700 1600 60  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L R R1
+L nk-u2f-rescue:R R1
 U 1 1 58B46D59
 P 5350 1600
 F 0 "R1" V 5430 1600 50  0000 C CNN
@@ -253,7 +223,7 @@ Button
 Text Label 7400 1800 0    60   ~ 0
 Button
 $Comp
-L R R2
+L nk-u2f-rescue:R R2
 U 1 1 58B4B268
 P 5350 1800
 F 0 "R2" V 5430 1800 50  0000 C CNN
@@ -274,7 +244,7 @@ Wire Wire Line
 Wire Wire Line
 	5200 1800 5100 1800
 $Comp
-L C C1
+L nk-u2f-rescue:C C1
 U 1 1 58B4E061
 P 5100 6500
 F 0 "C1" H 5125 6600 50  0000 L CNN
@@ -293,7 +263,7 @@ Wire Wire Line
 Wire Wire Line
 	4950 6500 4650 6500
 $Comp
-L EFM8UBx-QFN20 U1
+L nk-u2f-rescue:EFM8UBx-QFN20 U1
 U 1 1 58B4B07B
 P 6000 4400
 F 0 "U1" H 5500 5100 60  0000 C CNN
@@ -318,31 +288,31 @@ SDA
 Text Label 950  1300 0    60   ~ 0
 SCL
 Wire Wire Line
-	1400 4350 2050 4350
+	1800 4900 2250 4900
 Wire Wire Line
-	2050 4350 2050 3900
+	2250 4900 2250 4450
 Wire Wire Line
-	1400 4450 2350 4450
+	1800 5000 2550 5000
 Wire Wire Line
-	2350 4450 2350 3900
+	2550 5000 2550 4450
 $Comp
-L USB_Plug J1
+L nk-u2f-rescue:USB_Plug J1
 U 1 1 58B4C866
-P 1200 4400
-F 0 "J1" H 1125 4650 60  0000 C CNN
-F 1 "USB_Plug" H 1100 4150 60  0001 C CNN
-F 2 "footprints:USB-A-PLUG" H 1200 4400 60  0001 C CNN
-F 3 "" H 1200 4400 60  0000 C CNN
-	1    1200 4400
+P 1600 4950
+F 0 "J1" H 1525 5200 60  0000 C CNN
+F 1 "USB_Plug" H 1500 4700 60  0001 C CNN
+F 2 "footprints:USB-A-PLUG" H 1600 4950 60  0001 C CNN
+F 3 "" H 1600 4950 60  0000 C CNN
+	1    1600 4950
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1400 4550 1800 4550
+	1800 5100 2050 5100
 Wire Wire Line
-	1400 4250 1800 4250
-Text Label 1800 4550 2    60   ~ 0
+	1800 4800 2050 4800
+Text Label 2050 5100 2    60   ~ 0
 GND
-Text Label 1800 4250 2    60   ~ 0
+Text Label 2050 4800 2    60   ~ 0
 +5V
 Wire Wire Line
 	5250 4600 4700 4600
@@ -357,15 +327,15 @@ HD-
 Text Label 4700 4500 2    60   ~ 0
 HD+
 Wire Wire Line
-	5900 5200 5900 5700
+	5900 5200 5900 5400
 Wire Wire Line
-	6100 5200 6100 5700
+	6100 5200 6100 5600
 Wire Wire Line
 	6200 5200 6200 5700
 Wire Wire Line
-	6700 4600 7250 4600
+	6700 4600 7050 4600
 Wire Wire Line
-	6700 4400 7250 4400
+	6700 4400 6850 4400
 Wire Wire Line
 	6700 4500 7250 4500
 Text Label 7250 4500 0    60   ~ 0
@@ -408,7 +378,7 @@ Capacitive Touch Buton\n\n\n
 Text Notes 4950 2000 0    60   ~ 0
 Maximum Sensitivity\n
 $Comp
-L LED_Small D1
+L nk-u2f-rescue:LED_Small D1
 U 1 1 58BE480C
 P 9800 3950
 F 0 "D1" H 9750 4075 50  0000 L CNN
@@ -426,7 +396,7 @@ Wire Wire Line
 Text Label 4700 3900 2    60   ~ 0
 GND
 $Comp
-L C C2
+L nk-u2f-rescue:C C2
 U 1 1 58BE8B33
 P 5100 6800
 F 0 "C2" H 5125 6900 50  0000 L CNN
@@ -441,7 +411,7 @@ F 7 "?" H 5100 6800 60  0001 C CNN "Distributer Link"
 	0    -1   1    0   
 $EndComp
 $Comp
-L C C3
+L nk-u2f-rescue:C C3
 U 1 1 58BE8F14
 P 5100 7150
 F 0 "C3" H 5125 7250 50  0000 L CNN
@@ -456,7 +426,7 @@ F 7 "?" H 5100 7150 60  0001 C CNN "Distributer Link"
 	0    -1   1    0   
 $EndComp
 $Comp
-L debug-pin TP3
+L nk-u2f-rescue:debug-pin TP3
 U 1 1 58BF08D2
 P 9350 2050
 F 0 "TP3" V 9150 1450 60  0000 C CNN
@@ -467,7 +437,7 @@ F 3 "" H 9350 2050 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L debug-pin TP2
+L nk-u2f-rescue:debug-pin TP2
 U 1 1 58BF092E
 P 9350 1950
 F 0 "TP2" V 9150 1350 60  0000 C CNN
@@ -482,7 +452,7 @@ HD+
 Text Label 9200 1850 0    60   ~ 0
 HD-
 $Comp
-L debug-pin TP4
+L nk-u2f-rescue:debug-pin TP4
 U 1 1 58BF35A7
 P 9350 2150
 F 0 "TP4" V 9150 1550 60  0000 C CNN
@@ -501,7 +471,7 @@ Button_reset
 Wire Wire Line
 	6750 1700 6750 1050
 $Comp
-L R R4
+L nk-u2f-rescue:R R4
 U 1 1 5A77979E
 P 6450 5400
 F 0 "R4" V 6530 5400 50  0000 C CNN
@@ -525,7 +495,7 @@ Wire Wire Line
 Text Label 6450 5200 0    60   ~ 0
 +5V
 $Comp
-L C C4
+L nk-u2f-rescue:C C4
 U 1 1 5A779EEC
 P 5100 6200
 F 0 "C4" H 5125 6300 50  0000 L CNN
@@ -546,7 +516,7 @@ Wire Wire Line
 	4950 6200 4650 6200
 Connection ~ 4650 6500
 $Comp
-L R R5
+L nk-u2f-rescue:R R5
 U 1 1 5A77A495
 P 6850 3950
 F 0 "R5" V 6930 3950 50  0000 C CNN
@@ -561,7 +531,7 @@ F 7 "?" H 6850 3950 60  0001 C CNN "Distributer Link"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R7
+L nk-u2f-rescue:R R7
 U 1 1 5A77A548
 P 7050 3950
 F 0 "R7" V 7130 3950 50  0000 C CNN
@@ -594,7 +564,7 @@ Text Label 7050 3700 0    60   ~ 0
 Text Label 6850 3700 0    60   ~ 0
 +5V
 $Comp
-L PWR_FLAG-RESCUE-nk-u2f #FLG02
+L nk-u2f-rescue:PWR_FLAG-RESCUE-nk-u2f #FLG02
 U 1 1 5A77BCD6
 P 9250 5800
 F 0 "#FLG02" H 9250 5895 50  0001 C CNN
@@ -608,4 +578,77 @@ Text Label 6750 1050 0    60   ~ 0
 +5V
 NoConn ~ 6000 3600
 NoConn ~ 6100 3600
+Wire Wire Line
+	4650 7150 4650 7350
+Wire Wire Line
+	5500 6800 5500 7150
+Wire Wire Line
+	5500 6800 5650 6800
+Wire Wire Line
+	4650 6800 4650 7150
+Wire Wire Line
+	5900 5400 5900 5700
+Wire Wire Line
+	6100 5600 6100 5700
+Wire Wire Line
+	5500 6500 5500 6800
+Wire Wire Line
+	4650 6500 4650 6800
+Wire Wire Line
+	6850 4400 7250 4400
+Wire Wire Line
+	7050 4600 7250 4600
+$Comp
+L nk-u2f-rescue:C C5
+U 1 1 5BB01812
+P 1200 5500
+F 0 "C5" H 1225 5600 50  0000 L CNN
+F 1 "10n" H 1225 5400 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 1238 5350 50  0001 C CNN
+F 3 "?" H 1200 5500 50  0001 C CNN
+F 4 "?" H 1200 5500 60  0001 C CNN "MFG Name"
+F 5 "?" H 1200 5500 60  0001 C CNN "MFG Part Num"
+F 6 "?" H 1200 5500 60  0001 C CNN "Distributer PN"
+F 7 "?" H 1200 5500 60  0001 C CNN "Distributer Link"
+	1    1200 5500
+	-1   0    0    -1  
+$EndComp
+$Comp
+L nk-u2f-rescue:R R6
+U 1 1 5BB01955
+P 1350 5500
+F 0 "R6" V 1430 5500 50  0000 C CNN
+F 1 "1M" V 1350 5500 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" V 1280 5500 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 1350 5500 50  0001 C CNN
+F 4 "Vishay Dale" H 1350 5500 60  0001 C CNN "MFG Name"
+F 5 "?" H 1350 5500 60  0001 C CNN "MFG Part Num"
+F 6 "?" H 1350 5500 60  0001 C CNN "Distributer PN"
+F 7 "?" H 1350 5500 60  0001 C CNN "Distributer Link"
+	1    1350 5500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 5250 1200 5300
+Wire Wire Line
+	1350 5250 1350 5300
+Wire Wire Line
+	1200 5650 1200 5800
+Wire Wire Line
+	1200 5800 1350 5800
+Wire Wire Line
+	1350 5650 1350 5800
+Connection ~ 1350 5800
+Wire Wire Line
+	1350 5800 1500 5800
+Wire Wire Line
+	1350 5300 1200 5300
+Connection ~ 1350 5300
+Wire Wire Line
+	1350 5300 1350 5350
+Connection ~ 1200 5300
+Wire Wire Line
+	1200 5300 1200 5350
+Text Label 5650 6800 0    60   ~ 0
+GND
 $EndSCHEMATC
