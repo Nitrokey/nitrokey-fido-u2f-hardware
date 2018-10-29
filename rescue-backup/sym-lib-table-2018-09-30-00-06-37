@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name nk-u2f-rescue)(type Legacy)(uri ${KIPRJMOD}/nk-u2f-rescue.lib)(options "")(descr ""))
-)
