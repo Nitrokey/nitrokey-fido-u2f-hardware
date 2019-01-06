@@ -1,4 +1,3 @@
 (sym_lib_table
   (lib (name nk-u2f-rescue)(type Legacy)(uri ${KIPRJMOD}/nk-u2f-rescue.lib)(options "")(descr ""))
-  (lib (name USB_Plug)(type Legacy)(uri "/Users/glozikadam/Google Drive/PROJECTS/Nitrokey/gadam_repo/nitrokey-fido-u2f-hardware/library/USB_Plug.lib")(options "")(descr ""))
 )

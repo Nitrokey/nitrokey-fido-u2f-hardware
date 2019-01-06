@@ -6,8 +6,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Nitrokey FIDO U2F"
-Date "2018-09-29"
-Rev "R7"
+Date "2019-01-03"
+Rev "R8"
 Comp "Nitrokey"
 Comment1 ""
 Comment2 ""
@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L nk-u2f-rescue:ATECC508A-RESCUE-u2f-zero U4
+L nk-u2f-rescue:ATECC508A-RESCUE-u2f-zero-nk-u2f-rescue-nk-u2f-rescue U4
 U 1 1 56857313
 P 2100 1350
 F 0 "U4" H 2400 1650 60  0000 C CNN
@@ -32,7 +32,7 @@ $EndComp
 Text Label 950  1500 0    60   ~ 0
 +5V
 $Comp
-L nk-u2f-rescue:DF5A5.6JE U3
+L nk-u2f-rescue:DF5A5.6JE-nk-u2f-rescue-nk-u2f-rescue U3
 U 1 1 56857EAF
 P 2400 4150
 F 0 "U3" H 2000 4200 60  0000 C CNN
@@ -59,7 +59,7 @@ HD-
 Text Label 2550 4600 2    60   ~ 0
 HD+
 $Comp
-L nk-u2f-rescue:R R3
+L nk-u2f-rescue:R-nk-u2f-rescue-nk-u2f-rescue R3
 U 1 1 56857B9B
 P 10300 3950
 F 0 "R3" V 10380 3950 50  0000 C CNN
@@ -80,7 +80,7 @@ Host USB data
 Text Notes 1700 1000 0    60   ~ 0
 Secure element for EC
 $Comp
-L nk-u2f-rescue:PWR_FLAG-RESCUE-nk-u2f #FLG01
+L nk-u2f-rescue:PWR_FLAG-RESCUE-nk-u2f-nk-u2f-rescue-nk-u2f-rescue #FLG01
 U 1 1 5686E60B
 P 9650 5800
 F 0 "#FLG01" H 9650 5895 50  0001 C CNN
@@ -100,7 +100,7 @@ C2CK
 Text Label 10050 1850 2    60   ~ 0
 C2D
 $Comp
-L nk-u2f-rescue:debug-pin TP5
+L nk-u2f-rescue:debug-pin-nk-u2f-rescue-nk-u2f-rescue TP5
 U 1 1 56A3F8D6
 P 9900 1550
 F 0 "TP5" V 9700 950 60  0000 C CNN
@@ -111,7 +111,7 @@ F 3 "" H 9900 1550 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L nk-u2f-rescue:debug-pin TP6
+L nk-u2f-rescue:debug-pin-nk-u2f-rescue-nk-u2f-rescue TP6
 U 1 1 56A3F90D
 P 9900 1650
 F 0 "TP6" V 9700 1050 60  0000 C CNN
@@ -161,7 +161,7 @@ Wire Wire Line
 Text Label 5900 5700 3    60   ~ 0
 +5V
 $Comp
-L nk-u2f-rescue:debug-pin TP1
+L nk-u2f-rescue:debug-pin-nk-u2f-rescue-nk-u2f-rescue TP1
 U 1 1 570602D3
 P 9350 1850
 F 0 "TP1" V 9150 1250 60  0000 C CNN
@@ -174,7 +174,7 @@ $EndComp
 Text Label 9200 1650 0    60   ~ 0
 GND
 $Comp
-L nk-u2f-rescue:MTCH101 U2
+L nk-u2f-rescue:MTCH101-nk-u2f-rescue-nk-u2f-rescue U2
 U 1 1 58B45395
 P 6100 1700
 F 0 "U2" H 5900 2100 60  0000 C CNN
@@ -185,7 +185,7 @@ F 3 "" H 6100 1700 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L nk-u2f-rescue:TouchPAD P1
+L nk-u2f-rescue:TouchPAD-nk-u2f-rescue-nk-u2f-rescue P1
 U 1 1 58B45501
 P 4700 1600
 F 0 "P1" H 4600 1900 60  0000 C CNN
@@ -196,7 +196,7 @@ F 3 "" H 4700 1600 60  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L nk-u2f-rescue:R R1
+L nk-u2f-rescue:R-nk-u2f-rescue-nk-u2f-rescue R1
 U 1 1 58B46D59
 P 5350 1600
 F 0 "R1" V 5430 1600 50  0000 C CNN
@@ -223,7 +223,7 @@ Button
 Text Label 7400 1800 0    60   ~ 0
 Button
 $Comp
-L nk-u2f-rescue:R R2
+L nk-u2f-rescue:R-nk-u2f-rescue-nk-u2f-rescue R2
 U 1 1 58B4B268
 P 5350 1800
 F 0 "R2" V 5430 1800 50  0000 C CNN
@@ -244,7 +244,7 @@ Wire Wire Line
 Wire Wire Line
 	5200 1800 5100 1800
 $Comp
-L nk-u2f-rescue:C C1
+L nk-u2f-rescue:C-nk-u2f-rescue-nk-u2f-rescue C1
 U 1 1 58B4E061
 P 5100 6500
 F 0 "C1" H 5125 6600 50  0000 L CNN
@@ -263,7 +263,7 @@ Wire Wire Line
 Wire Wire Line
 	4950 6500 4650 6500
 $Comp
-L nk-u2f-rescue:EFM8UBx-QFN20 U1
+L nk-u2f-rescue:EFM8UBx-QFN20-nk-u2f-rescue-nk-u2f-rescue U1
 U 1 1 58B4B07B
 P 6000 4400
 F 0 "U1" H 5500 5100 60  0000 C CNN
@@ -296,7 +296,7 @@ Wire Wire Line
 Wire Wire Line
 	2550 5000 2550 4450
 $Comp
-L nk-u2f-rescue:USB_Plug J1
+L nk-u2f-rescue:USB_Plug-nk-u2f-rescue-nk-u2f-rescue J1
 U 1 1 58B4C866
 P 1600 4950
 F 0 "J1" H 1525 5200 60  0000 C CNN
@@ -378,7 +378,7 @@ Capacitive Touch Buton\n\n\n
 Text Notes 4950 2000 0    60   ~ 0
 Maximum Sensitivity\n
 $Comp
-L nk-u2f-rescue:LED_Small D1
+L nk-u2f-rescue:LED_Small-nk-u2f-rescue-nk-u2f-rescue D1
 U 1 1 58BE480C
 P 9800 3950
 F 0 "D1" H 9750 4075 50  0000 L CNN
@@ -396,7 +396,7 @@ Wire Wire Line
 Text Label 4700 3900 2    60   ~ 0
 GND
 $Comp
-L nk-u2f-rescue:C C2
+L nk-u2f-rescue:C-nk-u2f-rescue-nk-u2f-rescue C2
 U 1 1 58BE8B33
 P 5100 6800
 F 0 "C2" H 5125 6900 50  0000 L CNN
@@ -411,7 +411,7 @@ F 7 "?" H 5100 6800 60  0001 C CNN "Distributer Link"
 	0    -1   1    0   
 $EndComp
 $Comp
-L nk-u2f-rescue:C C3
+L nk-u2f-rescue:C-nk-u2f-rescue-nk-u2f-rescue C3
 U 1 1 58BE8F14
 P 5100 7150
 F 0 "C3" H 5125 7250 50  0000 L CNN
@@ -426,7 +426,7 @@ F 7 "?" H 5100 7150 60  0001 C CNN "Distributer Link"
 	0    -1   1    0   
 $EndComp
 $Comp
-L nk-u2f-rescue:debug-pin TP3
+L nk-u2f-rescue:debug-pin-nk-u2f-rescue-nk-u2f-rescue TP3
 U 1 1 58BF08D2
 P 9350 2050
 F 0 "TP3" V 9150 1450 60  0000 C CNN
@@ -437,7 +437,7 @@ F 3 "" H 9350 2050 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L nk-u2f-rescue:debug-pin TP2
+L nk-u2f-rescue:debug-pin-nk-u2f-rescue-nk-u2f-rescue TP2
 U 1 1 58BF092E
 P 9350 1950
 F 0 "TP2" V 9150 1350 60  0000 C CNN
@@ -452,7 +452,7 @@ HD+
 Text Label 9200 1850 0    60   ~ 0
 HD-
 $Comp
-L nk-u2f-rescue:debug-pin TP4
+L nk-u2f-rescue:debug-pin-nk-u2f-rescue-nk-u2f-rescue TP4
 U 1 1 58BF35A7
 P 9350 2150
 F 0 "TP4" V 9150 1550 60  0000 C CNN
@@ -471,7 +471,7 @@ Button_reset
 Wire Wire Line
 	6750 1700 6750 1050
 $Comp
-L nk-u2f-rescue:R R4
+L nk-u2f-rescue:R-nk-u2f-rescue-nk-u2f-rescue R4
 U 1 1 5A77979E
 P 6450 5400
 F 0 "R4" V 6530 5400 50  0000 C CNN
@@ -495,7 +495,7 @@ Wire Wire Line
 Text Label 6450 5200 0    60   ~ 0
 +5V
 $Comp
-L nk-u2f-rescue:C C4
+L nk-u2f-rescue:C-nk-u2f-rescue-nk-u2f-rescue C4
 U 1 1 5A779EEC
 P 5100 6200
 F 0 "C4" H 5125 6300 50  0000 L CNN
@@ -516,7 +516,7 @@ Wire Wire Line
 	4950 6200 4650 6200
 Connection ~ 4650 6500
 $Comp
-L nk-u2f-rescue:R R5
+L nk-u2f-rescue:R-nk-u2f-rescue-nk-u2f-rescue R5
 U 1 1 5A77A495
 P 6850 3950
 F 0 "R5" V 6930 3950 50  0000 C CNN
@@ -531,7 +531,7 @@ F 7 "?" H 6850 3950 60  0001 C CNN "Distributer Link"
 	1    0    0    -1  
 $EndComp
 $Comp
-L nk-u2f-rescue:R R7
+L nk-u2f-rescue:R-nk-u2f-rescue-nk-u2f-rescue R7
 U 1 1 5A77A548
 P 7050 3950
 F 0 "R7" V 7130 3950 50  0000 C CNN
@@ -564,7 +564,7 @@ Text Label 7050 3700 0    60   ~ 0
 Text Label 6850 3700 0    60   ~ 0
 +5V
 $Comp
-L nk-u2f-rescue:PWR_FLAG-RESCUE-nk-u2f #FLG02
+L nk-u2f-rescue:PWR_FLAG-RESCUE-nk-u2f-nk-u2f-rescue-nk-u2f-rescue #FLG02
 U 1 1 5A77BCD6
 P 9250 5800
 F 0 "#FLG02" H 9250 5895 50  0001 C CNN
@@ -599,7 +599,7 @@ Wire Wire Line
 Wire Wire Line
 	7050 4600 7250 4600
 $Comp
-L nk-u2f-rescue:C C5
+L nk-u2f-rescue:C-nk-u2f-rescue-nk-u2f-rescue C5
 U 1 1 5BB01812
 P 1200 5500
 F 0 "C5" H 1225 5600 50  0000 L CNN
@@ -614,7 +614,7 @@ F 7 "?" H 1200 5500 60  0001 C CNN "Distributer Link"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L nk-u2f-rescue:R R6
+L nk-u2f-rescue:R-nk-u2f-rescue-nk-u2f-rescue R6
 U 1 1 5BB01955
 P 1350 5500
 F 0 "R6" V 1430 5500 50  0000 C CNN

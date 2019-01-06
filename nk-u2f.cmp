@@ -1,0 +1,235 @@
+Cmp-Mod V01 Created by PcbNew   date = 03.01.2019 18:11:18
+
+BeginCmp
+TimeStamp = 58B4D182
+Path = /58B4B07B
+Reference = U1;
+ValeurCmp = EFM8UB30F40G-A;
+IdModule  = footprints:QFN-20-0.5mm-user;
+EndCmp
+
+BeginCmp
+TimeStamp = 5C2E3D9B
+Path = 
+Reference = REF**;
+ValeurCmp = Fiducial_0.5mm_Dia_1mm_Outer;
+IdModule  = Fiducial:Fiducial_0.5mm_Dia_1mm_Outer;
+EndCmp
+
+BeginCmp
+TimeStamp = 5B8AA18C
+Path = /58BE8F14
+Reference = C3;
+ValeurCmp = 4.7uF;
+IdModule  = Capacitors_SMD:C_0402;
+EndCmp
+
+BeginCmp
+TimeStamp = 5C2613DE
+Path = 
+Reference = REF**;
+ValeurCmp = Fiducial_0.5mm_Dia_1mm_Outer;
+IdModule  = Fiducial:Fiducial_0.5mm_Dia_1mm_Outer;
+EndCmp
+
+BeginCmp
+TimeStamp = 58B4CD93
+Path = /58B45501
+Reference = P1;
+ValeurCmp = TouchPAD;
+IdModule  = footprints:TouchPad;
+EndCmp
+
+BeginCmp
+TimeStamp = 58B4D169
+Path = /58B4C866
+Reference = J1;
+ValeurCmp = USB_Plug;
+IdModule  = footprints:USB-A-PLUG;
+EndCmp
+
+BeginCmp
+TimeStamp = 58B4CD9D
+Path = /58B45395
+Reference = U2;
+ValeurCmp = MTCH101;
+IdModule  = TO_SOT_Packages_SMD:SOT-23-6;
+EndCmp
+
+BeginCmp
+TimeStamp = 5C2CA764
+Path = /56857313
+Reference = U4;
+ValeurCmp = ATECC508A;
+IdModule  = Housings_DFN_QFN:DFN-8-1EP_3x3mm_Pitch0.5mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5C264501
+Path = /58BE8B33
+Reference = C2;
+ValeurCmp = 0.1uF;
+IdModule  = Capacitors_SMD:C_0402;
+EndCmp
+
+BeginCmp
+TimeStamp = 58B4D3A8
+Path = /56857EAF
+Reference = U3;
+ValeurCmp = DF5A5.6JE;
+IdModule  = TO_SOT_Packages_SMD:SOT-553;
+EndCmp
+
+BeginCmp
+TimeStamp = 58BE3FA1
+Path = /58BE480C
+Reference = D1;
+ValeurCmp = LED_Small;
+IdModule  = LEDs:LED_0402;
+EndCmp
+
+BeginCmp
+TimeStamp = 5C2D3421
+Path = /58B46D59
+Reference = R1;
+ValeurCmp = 4K7;
+IdModule  = Resistors_SMD:R_0402;
+EndCmp
+
+BeginCmp
+TimeStamp = 58BE3FB7
+Path = /58B4B268
+Reference = R2;
+ValeurCmp = 10K;
+IdModule  = Resistors_SMD:R_0402;
+EndCmp
+
+BeginCmp
+TimeStamp = 58BE3FC7
+Path = /56857B9B
+Reference = R3;
+ValeurCmp = 390;
+IdModule  = Resistors_SMD:R_0402;
+EndCmp
+
+BeginCmp
+TimeStamp = 5C2DF23B
+Path = /5A77979E
+Reference = R4;
+ValeurCmp = 4K7;
+IdModule  = Resistors_SMD:R_0402;
+EndCmp
+
+BeginCmp
+TimeStamp = 5B8A9FC1
+Path = /5A77A495
+Reference = R5;
+ValeurCmp = 4K7;
+IdModule  = Resistors_SMD:R_0402;
+EndCmp
+
+BeginCmp
+TimeStamp = 5C2CE61F
+Path = /5A77A548
+Reference = R7;
+ValeurCmp = 4K7;
+IdModule  = Resistors_SMD:R_0402;
+EndCmp
+
+BeginCmp
+TimeStamp = 5C2CBF47
+Path = /5A779EEC
+Reference = C4;
+ValeurCmp = 0.1uF;
+IdModule  = Capacitors_SMD:C_0402;
+EndCmp
+
+BeginCmp
+TimeStamp = 58B4596B
+Path = /58B4E061
+Reference = C1;
+ValeurCmp = 0.1uF;
+IdModule  = Capacitors_SMD:C_0402;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A7A48C1
+Path = /570602D3
+Reference = TP1;
+ValeurCmp = debug-pin;
+IdModule  = footprints:Prog_Pad_Circular;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A7A48D5
+Path = /56A3F8D6
+Reference = TP5;
+ValeurCmp = debug-pin;
+IdModule  = footprints:Prog_Pad_Circular;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A7A48C6
+Path = /58BF092E
+Reference = TP2;
+ValeurCmp = debug-pin;
+IdModule  = footprints:Prog_Pad_Circular;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A7A48CB
+Path = /58BF08D2
+Reference = TP3;
+ValeurCmp = debug-pin;
+IdModule  = footprints:Prog_Pad_Circular;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A7A48DA
+Path = /56A3F90D
+Reference = TP6;
+ValeurCmp = debug-pin;
+IdModule  = footprints:Prog_Pad_Circular;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A7A48D0
+Path = /58BF35A7
+Reference = TP4;
+ValeurCmp = debug-pin;
+IdModule  = footprints:Prog_Pad_Circular;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BB00F8E
+Path = /5BB01812
+Reference = C5;
+ValeurCmp = 10n;
+IdModule  = Capacitors_SMD:C_0402;
+EndCmp
+
+BeginCmp
+TimeStamp = 5BB00DCD
+Path = /5BB01955
+Reference = R6;
+ValeurCmp = 1M;
+IdModule  = Resistors_SMD:R_0402;
+EndCmp
+
+BeginCmp
+TimeStamp = 5C282D05
+Path = 
+Reference = REF**;
+ValeurCmp = Fiducial_0.5mm_Dia_1mm_Outer;
+IdModule  = Fiducial:Fiducial_0.5mm_Dia_1mm_Outer;
+EndCmp
+
+BeginCmp
+TimeStamp = 5C2E3DBF
+Path = 
+Reference = REF**;
+ValeurCmp = Fiducial_0.5mm_Dia_1mm_Outer;
+IdModule  = Fiducial:Fiducial_0.5mm_Dia_1mm_Outer;
+EndCmp
+
+EndListe
