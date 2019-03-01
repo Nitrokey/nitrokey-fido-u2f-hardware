@@ -1,0 +1,17 @@
+"Id";"Designator";"Package";"Quantity";"Designation";"Supplier and ref";
+1;"P1";"TouchPad";1;"TouchPAD";;;
+2;"U1";"QFN-20-0.5mm-user";1;"EFM8UB30F40G-A";;;
+3;"REF**,REF**,REF**,REF**";"Fiducial_0.5mm_Dia_1mm_Outer";4;"Fiducial_0.5mm_Dia_1mm_Outer";;;
+4;"C3";"C_0402";1;"4.7uF";;;
+5;"J1";"USB-A-PLUG";1;"USB_Plug";;;
+6;"U2";"SOT-23-6";1;"MTCH101";;;
+7;"U4";"DFN-8-1EP_3x3mm_Pitch0.5mm";1;"ATECC508A";;;
+8;"C2,C4,C1";"C_0402";3;"0.1uF";;;
+9;"U3";"SOT-553";1;"DF5A5.6JE";;;
+10;"D1";"LED_0402";1;"LED_Small";;;
+11;"R1,R4,R5,R7";"R_0402";4;"4K7";;;
+12;"R2";"R_0402";1;"10K";;;
+13;"R3";"R_0402";1;"390";;;
+14;"TP1,TP5,TP2,TP3,TP6,TP4";"Prog_Pad_Circular";6;"debug-pin";;;
+15;"C5";"C_0402";1;"10n";;;
+16;"R6";"R_0402";1;"1M";;;
