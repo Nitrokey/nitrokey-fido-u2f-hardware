@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="D">
   <design>
-    <source>/Users/glozikadam/Google Drive/PROJECTS/Nitrokey/gadam_repo/nitrokey-fido-u2f-hardware/nk-u2f.sch</source>
+    <source>nk-u2f.sch</source>
     <date>Sunday, 30 September 2018 at 01:06:39</date>
     <tool>Eeschema (5.0.0-3-g5ebb6b6)</tool>
     <sheet number="1" name="/" tstamps="/">
